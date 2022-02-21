@@ -12,7 +12,7 @@
 
 // -- Function to get products from API --
 function getProducts() {
-  return fetch("http://localhost:3000/api/cameras")
+  return fetch("https://training-orinoco.herokuapp.com/api/cameras")
     .then(function (res) {
       return res.json();
     })
@@ -29,7 +29,7 @@ function displayProduct(product) {
   productCardTemplate = document.getElementById("product-card-template");
   const productCardClone = document.importNode(productCardTemplate.content, true);
 
-  productCardClone.getElementById("product-card").href = `http://127.0.0.1:5500/product.html?id=${product._id}`;
+  productCardClone.getElementById("product-card").href = `./product.html?id=${product._id}`;
   productCardClone.getElementById("card-img").src = product.imageUrl;
   productCardClone.getElementById("card-name").textContent = product.name;
   productCardClone.getElementById("card-price").textContent = `${product.price / 100} €`;
