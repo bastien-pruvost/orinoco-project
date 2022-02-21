@@ -15,14 +15,6 @@ header {
     font-weight: 900;
     padding: 0;
 
-    @media (hover: hover) {
-      &:hover {
-        color: $primary;
-        span {
-          color: $black;
-        }
-      }
-    }
     // Logo Dot
     span {
       color: $primary;

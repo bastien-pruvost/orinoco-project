@@ -13,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 12rem;
+  scroll-padding-top: 9rem;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -62,7 +62,7 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 3.5rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   text-align: center;
   font-weight: 900;
 }
@@ -113,16 +113,17 @@ section {
 }
 .button {
   display: inline-block;
-  border: 0.15rem solid #4261BD;
-  border-radius: 0.6rem;
+  border: 0.2rem solid #505050;
+  border-radius: 0.5rem;
   font-weight: 600;
   padding: 0.5rem 1.5rem;
   transition: 0.15s ease-in-out;
-  color: #4261BD;
+  color: #505050;
 }
 .button:hover {
-  background: #4261BD;
-  color: #FFFFFF;
+  background: #FFB901;
+  color: #252525;
+  border: 0.2rem solid #FFB901;
 }
 
 header {
@@ -142,14 +143,6 @@ header .logo {
   overflow: hidden;
   font-weight: 900;
   padding: 0;
-}
-@media (hover: hover) {
-  header .logo:hover {
-    color: #FFB901;
-  }
-  header .logo:hover span {
-    color: #252525;
-  }
 }
 header .logo span {
   color: #FFB901;
@@ -350,15 +343,16 @@ footer i {
 .products .gallery .product-card__details h3 {
   font-family: "Red Hat Text", sans-serif;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.6rem;
+  color: #252525;
 }
 .products .gallery .product-card__details .card-price {
   font-family: "Red Hat Display", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: #4261BD;
-  padding-bottom: 1.2rem;
+  color: #505050;
+  padding-bottom: 0.8rem;
 }
 
 @media (max-width: 900px) {

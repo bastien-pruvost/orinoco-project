@@ -13,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc($headerHeight + 3rem);
+  scroll-padding-top: calc($headerHeight);
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;

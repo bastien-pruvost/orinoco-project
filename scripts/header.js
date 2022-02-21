@@ -1,13 +1,16 @@
-// Global function
-main();
-function main() {
+// -- Global function --
+(function () {
+
   toggleNav();
   toggleSearch();
-}
 
+})();
+
+// -- Function to show or hide navbar --
 function toggleNav() {
   const navbar = document.getElementById("navbar");
 
+  // -- Show navbar when nav button is clicked --
   document.getElementById("toggle-nav-btn").addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -39,15 +42,15 @@ function toggleNav() {
 
 };
 
+// -- Function to show or hide searchbar
 function toggleSearch() {
   const searchbar = document.getElementById("searchbar");
 
   document.getElementById("toggle-search-btn").addEventListener("click", function (e) {
+    e.preventDefault();
     e.stopPropagation();
 
-    setTimeout(() => {
-      searchbar.classList.toggle("active");
-    }, 400);
+    searchbar.classList.toggle("active");
 
     if (document.getElementById("navbar").classList.contains("active")) {
       document.getElementById("navbar").classList.remove("active");
