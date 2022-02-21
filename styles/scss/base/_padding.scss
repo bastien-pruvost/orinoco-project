@@ -2,7 +2,7 @@ header, footer {
   padding: 2rem 9%;
 }
 section {
-  padding: 5rem 9%;
+  padding: 5rem 9% 3rem;
 }
 
 //Responsive
@@ -10,11 +10,11 @@ section {
 @media (max-width: 1200px) {
 
   header, footer {
-    padding: 2rem 4rem;
+    padding: 2rem 6%;
   }
 
   section {
-    padding: 4rem;
+    padding: 6% 6% 3rem;
   }
 }
 
@@ -25,17 +25,17 @@ section {
   }
 
   section {
-    padding: 3rem;
+    padding: 3rem 3rem 3rem;
   }
 }
 
 @media (max-width: 600px) {
 
   header, footer {
-    padding: 2rem;
+    padding: 2rem 2rem;
   }
 
   section {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 3rem;
   }
 }

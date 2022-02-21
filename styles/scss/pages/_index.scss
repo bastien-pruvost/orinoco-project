@@ -6,25 +6,66 @@
   gap: 3rem;
 
   &__desc {
-    flex: 1 1 38rem;
+    flex: 1 1 36rem;
     min-width: 10rem;
     padding-right: 3rem;
 
     h2 {
       font-size: 4rem;
+      font-weight: 900;
+      text-align: start;
+      padding-bottom: 2rem;
     }
   }
 
   &__img {
-    flex: 1 1 38rem;
+    flex: 1 1 36rem;
     min-width: 10rem;
     max-width: 60rem;
   }
 }
 
 
-section {
-overflow: hidden;
+.products {
+  overflow: hidden;
+
+
+  .gallery {
+    @include grid(25rem);
+    gap: 1.7rem;
+    justify-content: center;
+
+    .product-card {
+      padding: 1.8rem;
+      background: $white;
+      border: 0.1rem solid $shadowColor;
+      box-shadow: 0.1rem 0.2rem 2rem $shadowColor;
+
+      &__img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+
+      &__details {
+        text-align: center;
+        h3 {
+          font-family: $textFont;
+          font-size: 2.5rem;
+          font-weight: 700;
+          padding: 0.6rem;
+        }
+        .card-price {
+          font-family: $headingFont;
+          font-size: 2rem;
+          font-weight: 700;
+          color: $accent;
+          padding-bottom: 1.2rem;
+        }
+      }
+
+    }
+  }
 }
 
 // Responsive

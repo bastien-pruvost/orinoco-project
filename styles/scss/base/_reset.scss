@@ -13,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: $headerHeight;
+  scroll-padding-top: calc($headerHeight + 3rem);
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -22,11 +22,12 @@ html {
     width: 1rem;
   }
   &::-webkit-scrollbar-track {
-    background: $white;
+    background: $greyLight;
   }
   &::-webkit-scrollbar-thumb {
     background: $greyMedium;
     border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.4rem $shadowColor;
   }
 }
 

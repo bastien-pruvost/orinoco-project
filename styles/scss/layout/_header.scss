@@ -6,14 +6,23 @@ header {
   font-family: $headingFont;
   height: $headerHeight;
   background: $white;
-  box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+  box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
 
   // Logo
   .logo {
     font-size: 3.5rem;
     overflow: hidden;
     font-weight: 900;
+    padding: 0;
 
+    @media (hover: hover) {
+      &:hover {
+        color: $primary;
+        span {
+          color: $black;
+        }
+      }
+    }
     // Logo Dot
     span {
       color: $primary;
@@ -43,7 +52,7 @@ header {
 
   // Mobile navbar when active
   nav.active {
-    box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+    box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
     transform: translateY(0);
     opacity: 1;
   }
@@ -88,7 +97,7 @@ header {
   right: 9%;
   background-color: $white;
   border: 0.3rem solid $primary;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   z-index: -100;
   text-align: center;
   transform: translateY(-100%);
@@ -112,7 +121,7 @@ header {
 }
 
 .searchbar.active {
-  box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+  box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
   transform: translateY(0);
   opacity: 1;
 }
@@ -140,11 +149,11 @@ header {
       gap: 2rem;
       padding: 2rem;
       top: calc($headerHeight + 1rem);
-      left: 2rem;
+      // left: 2rem;
       right: 2rem;
       background-color: $white;
       border: 0.3rem solid $primary;
-      border-radius: 1rem;
+      border-radius: 0.8rem;
       transform: translateY(-100%);
       opacity: 0;
       z-index: -100;

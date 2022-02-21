@@ -1,0 +1,32 @@
+footer {
+  @include flex(space-between, center);
+  background: $black;
+  color: $white;
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  i {
+    font-size: 3rem;
+    padding: 0 1rem;
+  }
+}
+
+
+// Responsive
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  footer :nth-child(1) {
+    order: 2;
+  }
+  footer :nth-child(2) {
+    order: 1;
+  }
+  footer :nth-child(3) {
+    order: 3;
+  }
+}

@@ -37,8 +37,10 @@ body {
 
 h1, h2, h3, h4, h5 {
  font-family: $headingFont;
- font-size: 3rem;
- padding-bottom: 1rem;
+ font-size: 3.5rem;
+ padding-bottom: 3rem;
+ text-align: center;
+ font-weight: 900;
 }
 
 strong {
@@ -48,4 +50,5 @@ strong {
 
 p {
   line-height: 1.4;
+  color: $greyMedium;
 }
