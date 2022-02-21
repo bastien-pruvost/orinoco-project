@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+html::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+html::-webkit-scrollbar-thumb {
+  background: #858585;
+  border-radius: 0.5rem;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 1921px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 2rem;
+  color: #222222;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+strong {
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.4;
+}
+
+header, footer {
+  padding: 2rem 9%;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+@media (max-width: 1200px) {
+  header, footer {
+    padding: 2rem 4rem;
+  }
+
+  section {
+    padding: 4rem;
+  }
+}
+@media (max-width: 900px) {
+  header, footer {
+    padding: 2rem 3rem;
+  }
+
+  section {
+    padding: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  header, footer {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Red Hat Display", sans-serif;
+  height: 9rem;
+  background: #FFFFFF;
+  box-shadow: 0.2rem 0.2rem 1rem #85858528;
+}
+header .logo {
+  font-size: 3.5rem;
+  overflow: hidden;
+  font-weight: 900;
+}
+header .logo span {
+  color: #FFB901;
+  font-size: 4rem;
+  line-height: 3.5rem;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 800;
+  transition: 0.2s ease-in-out;
+}
+header nav a {
+  padding: 0 2rem;
+  transition: 0.15s ease-in-out;
+}
+@media (hover: hover) {
+  header nav a:hover {
+    color: #FFB901;
+  }
+}
+header nav.active {
+  box-shadow: 0.2rem 0.2rem 1rem #85858528;
+  transform: translateY(0);
+  opacity: 1;
+}
+header .icons-nav {
+  font-size: 2.5rem;
+  position: relative;
+}
+header .icons-nav a {
+  margin-left: 2rem;
+  transition: 0.15s ease-in-out;
+}
+header .icons-nav a #cart-count {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}
+@media (hover: hover) {
+  header .icons-nav a:hover {
+    color: #FFB901;
+  }
+}
+header .icons-nav #toggle-nav-btn {
+  display: none;
+}
+
+.searchbar {
+  position: fixed;
+  padding: 1rem;
+  width: 30rem;
+  top: 10rem;
+  right: 9%;
+  background-color: #FFFFFF;
+  border: 0.3rem solid #FFB901;
+  border-radius: 1rem;
+  z-index: -100;
+  text-align: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.searchbar input {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  outline: none;
+  width: 89%;
+  padding-right: 1rem;
+}
+.searchbar i {
+  color: #858585;
+  font-size: 1.8rem;
+}
+
+.searchbar.active {
+  box-shadow: 0.2rem 0.2rem 1rem #85858528;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  header .searchbar {
+    right: 2rem;
+  }
+}
+@media (max-width: 900px) {
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    gap: 2rem;
+    padding: 2rem;
+    top: 10rem;
+    left: 2rem;
+    right: 2rem;
+    background-color: #FFFFFF;
+    border: 0.3rem solid #FFB901;
+    border-radius: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -100;
+  }
+  header .icons-nav #toggle-nav-btn {
+    display: inline-block;
+  }
+  header .searchbar {
+    width: auto;
+    left: 2rem;
+    right: 2rem;
+  }
+}

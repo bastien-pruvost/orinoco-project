@@ -1,0 +1,41 @@
+header, footer {
+  padding: 2rem 9%;
+}
+section {
+  padding: 5rem 9%;
+}
+
+//Responsive
+
+@media (max-width: 1200px) {
+
+  header, footer {
+    padding: 2rem 4rem;
+  }
+
+  section {
+    padding: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+
+  header, footer {
+    padding: 2rem 3rem;
+  }
+
+  section {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  header, footer {
+    padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
+  }
+}

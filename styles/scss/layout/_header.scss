@@ -1,0 +1,166 @@
+header {
+  @include flex(space-between, center);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: $headingFont;
+  height: $headerHeight;
+  background: $white;
+  box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+
+  // Logo
+  .logo {
+    font-size: 3.5rem;
+    overflow: hidden;
+    font-weight: 900;
+
+    // Logo Dot
+    span {
+      color: $primary;
+      font-size: 4rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  // Navbar
+  nav {
+    @include flex (center, center);
+    flex-direction: row;
+    font-weight: 800;
+    transition:  0.2s ease-in-out;
+
+    a {
+      padding: 0 2rem;
+      transition: 0.15s ease-in-out;
+    }
+
+    @media (hover: hover) {
+      a:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  // Mobile navbar when active
+  nav.active {
+    box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  // Icons nav
+  .icons-nav {
+    font-size: 2.5rem;
+    position: relative;
+
+    a {
+      margin-left: 2rem;
+      transition: 0.15s ease-in-out;
+      
+      #cart-count {
+        position: absolute;
+        top: 0.6rem;
+        right: 0.9rem;
+        color: $white;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (hover: hover) {
+      a:hover {
+        color: $primary;
+      }
+    }
+
+    #toggle-nav-btn {
+      display: none;
+    }
+  }
+}
+
+// Searchbar
+
+.searchbar {
+  position: fixed;
+  padding: 1rem;
+  width: 30rem;
+  top: calc($headerHeight + 1rem);
+  right: 9%;
+  background-color: $white;
+  border: 0.3rem solid $primary;
+  border-radius: 1rem;
+  z-index: -100;
+  text-align: center;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition:  0.2s ease-in-out;
+
+  input {
+    font-family: $textFont;
+    font-size: 1.8rem;
+    font-weight: 600;
+    outline: none;
+    width: 89%;
+    // border-bottom: 0.2rem solid $greyMedium;
+    padding-right: 1rem;
+  }
+
+  i {
+    color: $greyMedium;
+    font-size: 1.8rem;
+  }
+}
+
+.searchbar.active {
+  box-shadow: 0.2rem 0.2rem 1rem $shadowColor;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+// Responsive
+
+@media (max-width: 1200px) {
+  header {
+    .searchbar {
+      right: 2rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  
+  header {
+
+    // Mobile navbar
+    nav {
+      @include flex(center, center);
+      flex-direction: column;
+      position: fixed;
+      gap: 2rem;
+      padding: 2rem;
+      top: calc($headerHeight + 1rem);
+      left: 2rem;
+      right: 2rem;
+      background-color: $white;
+      border: 0.3rem solid $primary;
+      border-radius: 1rem;
+      transform: translateY(-100%);
+      opacity: 0;
+      z-index: -100;
+    }
+
+    // Mobile icons nav
+    .icons-nav {
+      #toggle-nav-btn {
+        display: inline-block;
+      }
+    }
+
+    .searchbar {
+      width: auto;
+      left: 2rem;
+      right: 2rem;
+    }
+  }
+}

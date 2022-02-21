@@ -1,0 +1,40 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 3rem;
+
+  &__desc {
+    flex: 1 1 38rem;
+    min-width: 10rem;
+    padding-right: 3rem;
+
+    h2 {
+      font-size: 4rem;
+    }
+  }
+
+  &__img {
+    flex: 1 1 38rem;
+    min-width: 10rem;
+    max-width: 60rem;
+  }
+}
+
+
+section {
+overflow: hidden;
+}
+
+// Responsive
+
+@media (max-width: 900px) {
+  .banner {
+    &__desc {
+      padding: 0;
+      // text-align: justify;
+    }
+  }
+}
+
