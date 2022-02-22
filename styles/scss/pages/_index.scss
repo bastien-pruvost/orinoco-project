@@ -1,7 +1,5 @@
 .banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(center, center);
   flex-wrap: wrap-reverse;
   gap: 3rem;
 
@@ -28,6 +26,7 @@
 
 .products {
   overflow: hidden;
+  padding-bottom: 6rem;
 
 
   .gallery {
@@ -51,7 +50,7 @@
         text-align: center;
         h3 {
           font-family: $textFont;
-          font-size: 2.5rem;
+          font-size: 2.3rem;
           font-weight: 600;
           padding: 0.6rem;
           color: $black;
@@ -60,7 +59,7 @@
           font-family: $headingFont;
           font-size: 2rem;
           font-weight: 700;
-          color: $greyMedium;
+          color: $black;
           padding-bottom: 0.8rem;
         }
       }

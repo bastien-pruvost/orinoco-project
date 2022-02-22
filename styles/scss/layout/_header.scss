@@ -28,7 +28,7 @@ header {
     @include flex (center, center);
     flex-direction: row;
     font-weight: 800;
-    transition:  0.2s ease-in-out;
+    transition:  0.3s ease-in-out;
 
     a {
       padding: 0 2rem;
@@ -45,25 +45,29 @@ header {
   // Mobile navbar when active
   nav.active {
     box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
   }
 
   // Icons nav
   .icons-nav {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     position: relative;
 
     a {
       margin-left: 2rem;
       transition: 0.15s ease-in-out;
-      
+      position: relative;
       #cart-count {
         position: absolute;
-        top: 0.6rem;
-        right: 0.9rem;
+        width: 100%;
+        top: 0;
+        left: 0.2rem;
         color: $white;
-        font-size: 0.9rem;
+        font-size: 1rem;
+        line-height: 1.65rem;
+        text-align: center;
+        vertical-align: center;
       }
     }
 
@@ -92,9 +96,9 @@ header {
   border-radius: 0.8rem;
   z-index: -100;
   text-align: center;
-  transform: translateY(-100%);
+  transform: translateX(+125%);
   opacity: 0;
-  transition:  0.2s ease-in-out;
+  transition:  0.4s ease-in-out;
 
   input {
     font-family: $textFont;
@@ -124,7 +128,7 @@ header {
 @media (max-width: 1200px) {
   header {
     .searchbar {
-      right: 2rem;
+      right: 6%;
     }
   }
 }
@@ -142,13 +146,12 @@ header {
       padding: 2rem;
       top: calc($headerHeight + 1rem);
       // left: 2rem;
-      right: 2rem;
+      right: 3rem;
       background-color: $white;
       border: 0.3rem solid $primary;
       border-radius: 0.8rem;
-      transform: translateY(-100%);
+      transform: translateX(+150%);
       opacity: 0;
-      z-index: -100;
     }
 
     // Mobile icons nav
@@ -160,7 +163,19 @@ header {
 
     .searchbar {
       width: auto;
+      left: 3rem;
+      right: 3rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    .searchbar {
       left: 2rem;
+      right: 2rem;
+    }
+    nav {
       right: 2rem;
     }
   }

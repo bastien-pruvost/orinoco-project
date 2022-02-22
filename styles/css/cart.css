@@ -78,7 +78,7 @@ p {
   color: #505050;
 }
 
-header, footer {
+header {
   padding: 2rem 9%;
 }
 
@@ -86,46 +86,67 @@ section {
   padding: 5rem 9% 3rem;
 }
 
+footer {
+  padding: 3rem 9%;
+}
+
 @media (max-width: 1200px) {
-  header, footer {
+  header {
     padding: 2rem 6%;
   }
 
   section {
-    padding: 6% 6% 3rem;
+    padding: 3rem 6%;
+  }
+
+  footer {
+    padding: 3rem 6%;
   }
 }
 @media (max-width: 900px) {
-  header, footer {
+  header {
     padding: 2rem 3rem;
   }
 
   section {
-    padding: 3rem 3rem 3rem;
+    padding: 3rem;
+  }
+
+  footer {
+    padding: 3rem;
   }
 }
 @media (max-width: 600px) {
-  header, footer {
-    padding: 2rem 2rem;
+  header {
+    padding: 2rem;
   }
 
   section {
-    padding: 3rem 2rem 3rem;
+    padding: 3rem 2rem;
+  }
+
+  footer {
+    padding: 3rem 2rem;
   }
 }
 .button {
   display: inline-block;
-  border: 0.2rem solid #505050;
   border-radius: 0.5rem;
   font-weight: 600;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   transition: 0.15s ease-in-out;
-  color: #505050;
+  border: 0.2rem solid #FFB901;
+  color: #252525;
+  background: #FFB901;
+  line-height: 1;
 }
 .button:hover {
-  background: #FFB901;
-  color: #252525;
-  border: 0.2rem solid #FFB901;
+  background: #ffdb39;
+  border: 0.2rem solid #ffdb39;
+}
+.button:active {
+  background: #c08a00;
+  border: 0.2rem solid #c08a00;
 }
 
 header {
@@ -158,7 +179,7 @@ header nav {
   align-items: center;
   flex-direction: row;
   font-weight: 800;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 header nav a {
   padding: 0 2rem;
@@ -171,23 +192,28 @@ header nav a {
 }
 header nav.active {
   box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
-  transform: translateY(0);
+  transform: translateX(0);
   opacity: 1;
 }
 header .icons-nav {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   position: relative;
 }
 header .icons-nav a {
   margin-left: 2rem;
   transition: 0.15s ease-in-out;
+  position: relative;
 }
 header .icons-nav a #cart-count {
   position: absolute;
-  top: 0.6rem;
-  right: 0.9rem;
+  width: 100%;
+  top: 0;
+  left: 0.2rem;
   color: #FFFFFF;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.65rem;
+  text-align: center;
+  vertical-align: center;
 }
 @media (hover: hover) {
   header .icons-nav a:hover {
@@ -209,9 +235,9 @@ header .icons-nav #toggle-nav-btn {
   border-radius: 0.8rem;
   z-index: -100;
   text-align: center;
-  transform: translateY(-100%);
+  transform: translateX(125%);
   opacity: 0;
-  transition: 0.2s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 .searchbar input {
   font-family: "Red Hat Text", sans-serif;
@@ -234,7 +260,7 @@ header .icons-nav #toggle-nav-btn {
 
 @media (max-width: 1200px) {
   header .searchbar {
-    right: 2rem;
+    right: 6%;
   }
 }
 @media (max-width: 900px) {
@@ -247,20 +273,28 @@ header .icons-nav #toggle-nav-btn {
     gap: 2rem;
     padding: 2rem;
     top: 10rem;
-    right: 2rem;
+    right: 3rem;
     background-color: #FFFFFF;
     border: 0.3rem solid #FFB901;
     border-radius: 0.8rem;
-    transform: translateY(-100%);
+    transform: translateX(150%);
     opacity: 0;
-    z-index: -100;
   }
   header .icons-nav #toggle-nav-btn {
     display: inline-block;
   }
   header .searchbar {
     width: auto;
+    left: 3rem;
+    right: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  header .searchbar {
     left: 2rem;
+    right: 2rem;
+  }
+  header nav {
     right: 2rem;
   }
 }

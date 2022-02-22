@@ -1,15 +1,20 @@
 .button {
   display: inline-block;
-  border: 0.2rem solid $greyMedium;
   border-radius: 0.5rem;
   font-weight: 600;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   transition: 0.15s ease-in-out;
-  color: $greyMedium;
+  border: 0.2rem solid $primary;
+  color: $black;
+  background: $primary;
+  line-height: 1;
 
   &:hover {
-    background: $primary;
-    color: $black;
-    border: 0.2rem solid $primary;
+    background: $primaryLight;
+    border: 0.2rem solid $primaryLight;
+  }
+  &:active {
+    background: $primaryDark;
+    border: 0.2rem solid $primaryDark;
   }
 }

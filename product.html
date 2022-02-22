@@ -20,35 +20,98 @@
 
 <body>
 
-  <!-- Fixed Header -->
+  <!-- Header -->
   <header>
 
-    <a href="./index.html#banner">
+    <a href="./index.html">
       <h1 class="logo">Orinoco<span>.</span></h1>
     </a>
 
     <nav id="navbar">
-      <a href="./index.html#banner">Accueil</a>
+      <a href="./index.html">Accueil</a>
       <a href="./index.html#products">Produits</a>
       <a href="./cart.html">Panier</a>
     </nav>
 
     <div class="icons-nav">
       <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-      <a href="./index.html#products" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a>
+      <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
       <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span>
     </div></a>
 
     <div class="searchbar" id="searchbar">
       <form action="">
-        <input type="text" placeholder="Rechercher"><i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Rechercher"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
       </form>
     </div>
   </header>
 
   <!-- Main -->
   <main>
+    <section class="product-container">
 
+      <div class="product">
+
+        <img src="" alt="" class="product__img" id="product-img">
+
+        <div class="product__details">
+
+          <h3 class="product__name" id="product-name"></h3>
+
+          <p class="product__desc" id="product-desc"></p>
+
+
+          <form action="" class="buy-options">
+
+            <div class="product__quantity">
+              <label for="quantity-select">Quantité :</label>
+              <select id="quantity-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+              </select>
+
+            </div>
+
+            <div class="product__lense-choice">
+              <label for="lense-select">Choisissez une lentille :</label>
+              <select name="" id="lense-select" class="lense-select">
+                <template id="lense-template">
+                  <option value="" id="lense-option">Lentille</option>
+                </template>
+              </select>
+            </div>
+
+          </form>
+
+          <div class="price-buy">
+            <span class="product__price" id="product-price">3900 €</span>
+            <a href="" class="button" id="add-to-cart">Ajouter au panier</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="cart-popup" id="cart-popup">
+      <div class="cart-popup__product-text">
+        <p class="cart-popup__title">Vous avez ajouté au panier :</p>
+        <p id="popup-inject-name-lense"></p>
+        <p id="popup-inject-quantity"></p>
+      </div>
+
+      <span>Voulez-vous continuer vos achats ?</span>
+      <a href="" class="button" id="continue-shopping-btn">Continuer mes achats</a>
+      <a href="./cart.html" class="button">Aller au panier</a>
+    </div>
 
 
   </main>
@@ -72,6 +135,7 @@
   <!-- JavaScript Link -->
   <script src="./scripts/config.js"></script>
   <script src="./scripts/header.js"></script>
+  <script src="./scripts/cart-counter.js"></script>
   <script src="./scripts/product.js"></script>
 
 </body>

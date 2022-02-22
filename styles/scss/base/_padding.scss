@@ -1,41 +1,50 @@
-header, footer {
+header {
   padding: 2rem 9%;
 }
 section {
   padding: 5rem 9% 3rem;
+}
+footer {
+  padding: 3rem 9%;
 }
 
 //Responsive
 
 @media (max-width: 1200px) {
 
-  header, footer {
+  header {
     padding: 2rem 6%;
   }
-
   section {
-    padding: 6% 6% 3rem;
+    padding: 3rem 6%;
+  }
+  footer {
+    padding: 3rem 6%;
   }
 }
 
 @media (max-width: 900px) {
 
-  header, footer {
+  header {
     padding: 2rem 3rem;
   }
-
   section {
-    padding: 3rem 3rem 3rem;
+    padding: 3rem;
+  }
+  footer {
+    padding: 3rem;
   }
 }
 
 @media (max-width: 600px) {
 
-  header, footer {
-    padding: 2rem 2rem;
+  header {
+    padding: 2rem;
   }
-
   section {
-    padding: 3rem 2rem 3rem;
+    padding: 3rem 2rem;
+  }
+  footer {
+    padding: 3rem 2rem;
   }
 }

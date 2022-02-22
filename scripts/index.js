@@ -11,15 +11,9 @@
 // -- Function to get products from API --
 function getProducts() {
   return fetch(`${apiUrl}/api/cameras`)
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (products) {
-      return products;
-    })
-    .catch(function (err) {
-      alert(err);
-    });
+    .then(function (res) { return res.json(); })
+    .then(function (products) { return products; })
+    .catch(function (err) { alert(err); });
 }
 
 // -- Function to dynamically display a product card in the html --
