@@ -27,7 +27,7 @@
       <h1 class="logo">Orinoco<span>.</span></h1>
     </a>
 
-    <nav id="navbar">
+    <nav class="navbar" id="navbar">
       <a href="./index.html">Accueil</a>
       <a href="./index.html#products">Produits</a>
       <a href="./cart.html">Panier</a>
@@ -36,11 +36,11 @@
     <div class="icons-nav">
       <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
       <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a>
-      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span>
-    </div></a>
+      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
+    </div>
 
     <div class="searchbar" id="searchbar">
-      <form action="">
+      <form action="#">
         <input type="text" placeholder="Rechercher"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
       </form>
     </div>
@@ -69,29 +69,29 @@
     <!-- Products Section -->
     <section class="products" id="products">
 
-      <h2>Nos produits</h1>
+      <h2>Nos produits</h2>
 
-        <!-- Products Grid -->
-        <div class="gallery" id="gallery">
+      <!-- Products Grid -->
+      <div class="gallery" id="gallery">
 
-          <!-- Template of products cards for JS injection -->
-          <template id="product-card-template">
+        <!-- Template of products cards for JS injection -->
+        <template id="product-card-template">
 
-            <a href="./product.html" class="product-card" id="product-card">
+          <a href="./product.html" class="product-card" id="product-card">
 
-              <img src="./images/vcam.jpg" alt="Photo d'un " class="product-card__img" id="card-img">
+            <img src="./images/vcam.jpg" alt="Photo d'un " class="product-card__img" id="card-img">
 
-              <div class="product-card__details">
-                <h3 class="card-name" id="card-name"></h3>
-                <p class="card-price" id="card-price"></p>
-                <p href="./product.html" class="card-btn button">Voir le produit</p>
-              </div>
+            <div class="product-card__details">
+              <h3 class="card-name" id="card-name"></h3>
+              <p class="card-price" id="card-price"></p>
+              <p href="./product.html" class="card-btn button">Voir le produit</p>
+            </div>
 
-            </a>
+          </a>
 
-          </template>
+        </template>
 
-        </div>
+      </div>
 
     </section>
 
@@ -115,8 +115,8 @@
 
   <!-- JavaScript Link -->
   <script src="./scripts/config.js"></script>
-  <script src="./scripts/header.js"></script>
   <script src="./scripts/cart-counter.js"></script>
+  <script src="./scripts/header.js"></script>
   <script src="./scripts/index.js"></script>
 
 </body>

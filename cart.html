@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Orinoco | Accueil</title>
+  <title>Orinoco | Panier</title>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/css/cart.css">
@@ -20,28 +20,28 @@
 
 <body>
 
-  <!-- Fixed Header -->
+  <!-- Header -->
   <header>
 
-    <a href="./index.html#banner">
+    <a href="./index.html">
       <h1 class="logo">Orinoco<span>.</span></h1>
     </a>
 
-    <nav id="navbar">
-      <a href="./index.html#banner">Accueil</a>
+    <nav class="navbar" id="navbar">
+      <a href="./index.html">Accueil</a>
       <a href="./index.html#products">Produits</a>
       <a href="./cart.html">Panier</a>
     </nav>
 
     <div class="icons-nav">
       <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-      <a href="./index.html#products" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a>
-      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span>
-    </div></a>
+      <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
+      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
+    </div>
 
     <div class="searchbar" id="searchbar">
-      <form action="">
-        <input type="text" placeholder="Rechercher"><i class="fa-solid fa-magnifying-glass"></i>
+      <form action="#">
+        <input type="text" placeholder="Rechercher"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
       </form>
     </div>
   </header>
@@ -49,7 +49,7 @@
   <!-- Main -->
   <main>
 
-
+    <section class="cart-section"></section>
 
   </main>
 
@@ -71,8 +71,8 @@
 
   <!-- JavaScript Link -->
   <script src="./scripts/config.js"></script>
-  <script src="./scripts/header.js"></script>
   <script src="./scripts/cart-counter.js"></script>
+  <script src="./scripts/header.js"></script>
   <script src="./scripts/cart.js"></script>
 
 </body>

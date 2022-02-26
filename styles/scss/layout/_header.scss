@@ -14,6 +14,8 @@ header {
     overflow: hidden;
     font-weight: 900;
     padding: 0;
+    width: 17rem;
+    text-align: left;
 
     // Logo Dot
     span {
@@ -24,11 +26,12 @@ header {
   }
 
   // Navbar
-  nav {
+  .navbar {
     @include flex (center, center);
     flex-direction: row;
     font-weight: 800;
     transition:  0.3s ease-in-out;
+    margin: 0 auto;
 
     a {
       padding: 0 2rem;
@@ -43,7 +46,7 @@ header {
   }
 
   // Mobile navbar when active
-  nav.active {
+  .navbar.active {
     box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
     transform: translateX(0);
     opacity: 1;
@@ -53,6 +56,8 @@ header {
   .icons-nav {
     font-size: 2.6rem;
     position: relative;
+    width: 17rem;
+    text-align: right;
 
     a {
       margin-left: 2rem;
@@ -138,7 +143,7 @@ header {
   header {
 
     // Mobile navbar
-    nav {
+    .navbar {
       @include flex(center, center);
       flex-direction: column;
       position: fixed;
@@ -175,7 +180,7 @@ header {
       left: 2rem;
       right: 2rem;
     }
-    nav {
+    .navbar {
       right: 2rem;
     }
   }

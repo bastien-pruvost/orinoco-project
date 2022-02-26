@@ -27,7 +27,7 @@
       <h1 class="logo">Orinoco<span>.</span></h1>
     </a>
 
-    <nav id="navbar">
+    <nav class="navbar" id="navbar">
       <a href="./index.html">Accueil</a>
       <a href="./index.html#products">Produits</a>
       <a href="./cart.html">Panier</a>
@@ -36,11 +36,11 @@
     <div class="icons-nav">
       <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
       <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
-      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span>
-    </div></a>
+      <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
+    </div>
 
     <div class="searchbar" id="searchbar">
-      <form action="">
+      <form action="#">
         <input type="text" placeholder="Rechercher"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
       </form>
     </div>
@@ -48,20 +48,20 @@
 
   <!-- Main -->
   <main>
-    <section class="product-container">
+    <section class="product-section">
 
       <div class="product">
 
-        <img src="" alt="" class="product__img" id="product-img">
+        <img src="#" alt="Photo du produit" class="product__img" id="product-img">
 
         <div class="product__details">
 
-          <h3 class="product__name" id="product-name"></h3>
+          <h3 class="product__name" id="product-name">.</h3>
 
-          <p class="product__desc" id="product-desc"></p>
+          <p class="product__desc" id="product-desc">.</p>
 
 
-          <form action="" class="buy-options">
+          <form action="#" class="buy-options">
 
             <div class="product__quantity">
               <label for="quantity-select">Quantité :</label>
@@ -81,7 +81,7 @@
 
             <div class="product__lense-choice">
               <label for="lense-select">Choisissez une lentille :</label>
-              <select name="" id="lense-select" class="lense-select">
+              <select name="lense-select" id="lense-select" class="lense-select">
                 <template id="lense-template">
                   <option value="" id="lense-option">Lentille</option>
                 </template>
@@ -90,10 +90,10 @@
 
           </form>
 
-          <div class="price-buy">
-            <span class="product__price" id="product-price">3900 €</span>
-            <a href="" class="button" id="add-to-cart">Ajouter au panier</a>
-          </div>
+          <!-- <div class="price-buy"> -->
+          <span class="product__price" id="product-price">3900 €</span>
+          <a href="" class="button" id="add-to-cart">Ajouter au panier</a>
+          <!-- </div> -->
 
         </div>
 
@@ -103,7 +103,7 @@
 
     <div class="cart-popup" id="cart-popup">
       <div class="cart-popup__product-text">
-        <p class="cart-popup__title">Vous avez ajouté au panier :</p>
+        <p class="cart-popup__title">Votre article a bien été ajouté au panier :</p>
         <p id="popup-inject-name-lense"></p>
         <p id="popup-inject-quantity"></p>
       </div>
@@ -134,8 +134,8 @@
 
   <!-- JavaScript Link -->
   <script src="./scripts/config.js"></script>
-  <script src="./scripts/header.js"></script>
   <script src="./scripts/cart-counter.js"></script>
+  <script src="./scripts/header.js"></script>
   <script src="./scripts/product.js"></script>
 
 </body>

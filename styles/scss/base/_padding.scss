@@ -1,11 +1,11 @@
 header {
-  padding: 2rem 9%;
+  padding: $headerPaddingY $widePaddingX;
 }
 section {
-  padding: 5rem 9% 3rem;
+  padding: $sectionPaddingY $widePaddingX;
 }
 footer {
-  padding: 3rem 9%;
+  padding: $footerPaddingY $widePaddingX;
 }
 
 //Responsive
@@ -13,38 +13,38 @@ footer {
 @media (max-width: 1200px) {
 
   header {
-    padding: 2rem 6%;
+    padding: $headerPaddingY $largePaddingX;
   }
   section {
-    padding: 3rem 6%;
+    padding: 3rem $largePaddingX;
   }
   footer {
-    padding: 3rem 6%;
+    padding: $footerPaddingY $largePaddingX;
   }
 }
 
 @media (max-width: 900px) {
 
   header {
-    padding: 2rem 3rem;
+    padding: $headerPaddingY $mediumPaddingX;
   }
   section {
-    padding: 3rem;
+    padding: $sectionPaddingY $mediumPaddingX;
   }
   footer {
-    padding: 3rem;
+    padding: $footerPaddingY $mediumPaddingX;
   }
 }
 
 @media (max-width: 600px) {
 
   header {
-    padding: 2rem;
+    padding: $headerPaddingY $smallPaddingX;
   }
   section {
-    padding: 3rem 2rem;
+    padding: 3rem $smallPaddingX;
   }
   footer {
-    padding: 3rem 2rem;
+    padding: $footerPaddingY $smallPaddingX;
   }
 }

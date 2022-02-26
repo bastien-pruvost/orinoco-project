@@ -1,11 +1,12 @@
 .banner {
   @include flex(center, center);
   flex-wrap: wrap-reverse;
-  gap: 3rem;
+  gap: 6rem;
 
   &__desc {
     flex: 1 1 36rem;
     min-width: 10rem;
+    max-width: 70rem;
     padding-right: 3rem;
 
     h2 {
@@ -19,7 +20,7 @@
   &__img {
     flex: 1 1 36rem;
     min-width: 10rem;
-    max-width: 60rem;
+    max-width: 70rem;
   }
 }
 
@@ -72,9 +73,13 @@
 
 @media (max-width: 900px) {
   .banner {
+    gap: 4rem;
     &__desc {
       padding: 0;
       // text-align: justify;
+    }
+    &__img {
+      max-width: 50rem;
     }
   }
 }

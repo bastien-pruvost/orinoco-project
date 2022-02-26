@@ -1,10 +1,10 @@
-//Fonts
+// -- Fonts --
 
 $headingFont: 'Red Hat Display', sans-serif;
 $textFont: 'Red Hat Text', sans-serif;
 
 
-//Colors
+// -- Colors --
 
 $white: #FFFFFF;
 $greyLight: #e9e9e9;
@@ -21,6 +21,31 @@ $accentDark: #2A3E79;
 
 $shadowColor: #85858528;
 
-// Other variables
+
+// Responsive BreakPoints
+
+$large: 1200px;
+$medium: 900px;
+$small: 600px;
+
+// -- Sections padding --
+
+$smallPaddingX: 2%;
+$mediumPaddingX: 5rem;
+$largePaddingX: 5rem;
+$widePaddingX: calc(((100vw - 1200px) / 2) + $mediumPaddingX);
+
+
+$headerPaddingY: 2rem;
+
+$sectionPaddingY: 4rem;
+
+$footerPaddingY: 4rem;
+
+
+// -- Other variables --
 
 $headerHeight: 9rem;
+
+
+

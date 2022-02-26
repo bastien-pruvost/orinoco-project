@@ -57,16 +57,23 @@ function addToCart(product) {
     // -- Const that contains the array retrieved in the Local Storage
     let localStorageCart = JSON.parse(localStorage.getItem("shopCart"));
 
-    // -- Open the "go to cart" pop-up
+    // -- Stock data product in an object --
+    let productDataForCart = {
+      productId: product._id,
+      productName: product.name,
+      productPrice: product.price,
+      productLense: lense,
+      productQuantity: quantity,
+    };
+
+    // -- Open the "go to cart ?" pop-up
     cartPopup(product, quantity, lense);
 
     // -- If there is already a cart array in Local Storage --
     if (localStorageCart) {
 
       // -- Push the product to the array according to quantity --
-      for (let i = 0; i < quantity; i++) {
-        localStorageCart.push(product._id);
-      };
+      localStorageCart.push(productDataForCart);
 
       // -- Put the array in Local Storage --
       localStorage.setItem("shopCart", JSON.stringify(localStorageCart));
@@ -77,13 +84,15 @@ function addToCart(product) {
       let localStorageCart = [];
 
       // -- Push the product to the array according to quantity --
-      for (let i = 0; i < quantity; i++) {
-        localStorageCart.push(product._id);
-      };
+      localStorageCart.push(productDataForCart);
 
       // -- Put the array in Local Storage --
       localStorage.setItem("shopCart", JSON.stringify(localStorageCart));
     }
+
+    // -- Add the quantity in the cart counter --
+    cartCounter();
+
   })
 };
 
@@ -101,7 +110,7 @@ function cartPopup(product, quantity, lense) {
   document.getElementById("continue-shopping-btn").addEventListener("click", function (e) {
     e.preventDefault();
     cartPopup.classList.remove("active")
-  }, false);
+  });
 
   // -- Close popup if user click somewhere on the body --
   document.body.addEventListener("click", function (e) {
@@ -109,6 +118,6 @@ function cartPopup(product, quantity, lense) {
       e.preventDefault();
       cartPopup.classList.remove("active")
     }
-  }, false)
+  })
 
 }

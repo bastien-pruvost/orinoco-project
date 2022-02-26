@@ -7,10 +7,14 @@
 function cartCounter() {
 
   const localCart = JSON.parse(localStorage.getItem("shopCart"));
-  let count;
+  let count = 0;
 
   if (localCart) {
-    count = localCart.length;
+
+    for (const product of localCart) {
+      count += parseInt(product.productQuantity);
+    }
+
   } else {
     count = 0;
   }
@@ -18,5 +22,3 @@ function cartCounter() {
   document.getElementById("cart-count").innerText = count;
 
 };
-
-

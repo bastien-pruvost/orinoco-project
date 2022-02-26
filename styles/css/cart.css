@@ -79,54 +79,54 @@ p {
 }
 
 header {
-  padding: 2rem 9%;
+  padding: 2rem calc((100vw - 1200px) / 2 + 5rem);
 }
 
 section {
-  padding: 5rem 9% 3rem;
+  padding: 4rem calc((100vw - 1200px) / 2 + 5rem);
 }
 
 footer {
-  padding: 3rem 9%;
+  padding: 4rem calc((100vw - 1200px) / 2 + 5rem);
 }
 
 @media (max-width: 1200px) {
   header {
-    padding: 2rem 6%;
+    padding: 2rem 5rem;
   }
 
   section {
-    padding: 3rem 6%;
+    padding: 3rem 5rem;
   }
 
   footer {
-    padding: 3rem 6%;
+    padding: 4rem 5rem;
   }
 }
 @media (max-width: 900px) {
   header {
-    padding: 2rem 3rem;
+    padding: 2rem 5rem;
   }
 
   section {
-    padding: 3rem;
+    padding: 4rem 5rem;
   }
 
   footer {
-    padding: 3rem;
+    padding: 4rem 5rem;
   }
 }
 @media (max-width: 600px) {
   header {
-    padding: 2rem;
+    padding: 2rem 2%;
   }
 
   section {
-    padding: 3rem 2rem;
+    padding: 3rem 2%;
   }
 
   footer {
-    padding: 3rem 2rem;
+    padding: 4rem 2%;
   }
 }
 .button {
@@ -167,30 +167,33 @@ header .logo {
   overflow: hidden;
   font-weight: 900;
   padding: 0;
+  width: 17rem;
+  text-align: left;
 }
 header .logo span {
   color: #FFB901;
   font-size: 4rem;
   line-height: 3.5rem;
 }
-header nav {
+header .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   font-weight: 800;
   transition: 0.3s ease-in-out;
+  margin: 0 auto;
 }
-header nav a {
+header .navbar a {
   padding: 0 2rem;
   transition: 0.15s ease-in-out;
 }
 @media (hover: hover) {
-  header nav a:hover {
+  header .navbar a:hover {
     color: #FFB901;
   }
 }
-header nav.active {
+header .navbar.active {
   box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
   transform: translateX(0);
   opacity: 1;
@@ -198,6 +201,8 @@ header nav.active {
 header .icons-nav {
   font-size: 2.6rem;
   position: relative;
+  width: 17rem;
+  text-align: right;
 }
 header .icons-nav a {
   margin-left: 2rem;
@@ -264,7 +269,7 @@ header .icons-nav #toggle-nav-btn {
   }
 }
 @media (max-width: 900px) {
-  header nav {
+  header .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +299,7 @@ header .icons-nav #toggle-nav-btn {
     left: 2rem;
     right: 2rem;
   }
-  header nav {
+  header .navbar {
     right: 2rem;
   }
 }
