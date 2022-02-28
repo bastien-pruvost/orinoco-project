@@ -1,13 +1,15 @@
 .banner {
-  @include flex(center, center);
-  flex-wrap: wrap-reverse;
-  gap: 6rem;
+  .banner-flex{
+    @include flex(space-between, center);
+    flex-wrap: wrap-reverse;
+    gap: 3rem;
+  }
 
   &__desc {
-    flex: 1 1 36rem;
+    flex: 1 1 45rem;
     min-width: 10rem;
-    max-width: 70rem;
-    padding-right: 3rem;
+    max-width: 60rem;
+    margin: 0 auto;
 
     h2 {
       font-size: 4rem;
@@ -18,17 +20,16 @@
   }
 
   &__img {
-    flex: 1 1 36rem;
+    flex: 1 1 45rem;
     min-width: 10rem;
-    max-width: 70rem;
+    max-width: 50rem;
+    margin: 0 auto;
   }
 }
 
 
 .products {
   overflow: hidden;
-  padding-bottom: 6rem;
-
 
   .gallery {
     @include grid(25rem);
@@ -48,10 +49,12 @@
       }
 
       &__details {
+        @include flex(space-between, center);
+        flex-direction: column;
         text-align: center;
         h3 {
           font-family: $textFont;
-          font-size: 2.3rem;
+          font-size: 2.2rem;
           font-weight: 600;
           padding: 0.6rem;
           color: $black;
@@ -73,14 +76,26 @@
 
 @media (max-width: 900px) {
   .banner {
-    gap: 4rem;
     &__desc {
-      padding: 0;
-      // text-align: justify;
-    }
-    &__img {
-      max-width: 50rem;
+      h2 {
+        font-size: 3.5rem;
+      }
     }
   }
 }
 
+@media (max-width: 600px) {
+  .products {
+    .gallery {
+      @include grid(20rem);
+      gap: 1rem;
+      .product-card {
+        &__details {
+          h3 {
+            min-height: 60px;
+          }
+        }
+      }
+    }
+  }
+}

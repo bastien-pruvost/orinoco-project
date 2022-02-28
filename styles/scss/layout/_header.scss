@@ -1,89 +1,97 @@
 header {
-  @include flex(space-between, center);
+  background: $white;
+  box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: $headingFont;
-  height: $headerHeight;
-  background: $white;
-  box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
-
-  // Logo
-  .logo {
-    font-size: 3.5rem;
-    overflow: hidden;
-    font-weight: 900;
-    padding: 0;
-    width: 17rem;
-    text-align: left;
-
-    // Logo Dot
-    span {
-      color: $primary;
-      font-size: 4rem;
-      line-height: 3.5rem;
-    }
-  }
-
-  // Navbar
-  .navbar {
-    @include flex (center, center);
-    flex-direction: row;
-    font-weight: 800;
-    transition:  0.3s ease-in-out;
-    margin: 0 auto;
-
-    a {
-      padding: 0 2rem;
-      transition: 0.15s ease-in-out;
-    }
-
-    @media (hover: hover) {
-      a:hover {
-        color: $primary;
-      }
-    }
-  }
-
-  // Mobile navbar when active
-  .navbar.active {
-    box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  // Icons nav
-  .icons-nav {
-    font-size: 2.6rem;
+  overflow: visible;
+  contain: layout;
+  
+  .header-flex {
+    @include flex(space-between, center);
     position: relative;
-    width: 17rem;
-    text-align: right;
+    font-family: $headingFont;
+    height: $headerHeight;
+    overflow: visible;
 
-    a {
-      margin-left: 2rem;
-      transition: 0.15s ease-in-out;
-      position: relative;
-      #cart-count {
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0.2rem;
-        color: $white;
-        font-size: 1rem;
-        line-height: 1.65rem;
-        text-align: center;
-        vertical-align: center;
-      }
-    }
+    // Logo
+    .logo {
+      font-size: 3.5rem;
+      overflow: hidden;
+      font-weight: 900;
+      padding: 0;
+      width: fit-content;
+      text-align: left;
 
-    @media (hover: hover) {
-      a:hover {
+      // Logo Dot
+      span {
         color: $primary;
+        font-size: 4rem;
+        line-height: 3.5rem;
       }
     }
 
-    #toggle-nav-btn {
-      display: none;
+    // Navbar
+    .navbar {
+      @include flex (center, center);
+      flex-direction: row;
+      font-weight: 800;
+      transition:  0.3s ease-in-out;
+      margin: 0 auto;
+
+      a {
+        padding: 0 2rem;
+        transition: 0.15s ease-in-out;
+      }
+
+      @media (hover: hover) {
+        a:hover {
+          color: $primary;
+        }
+      }
+    
+    }
+
+    // Mobile navbar when active
+    .navbar.active {
+      box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    // Icons nav
+    .icons-nav {
+      font-size: 2.6rem;
+      position: relative;
+      width: 17rem;
+      text-align: right;
+
+      a {
+        margin-left: 2rem;
+        transition: 0.15s ease-in-out;
+        position: relative;
+        #cart-count {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0.2rem;
+          color: $white;
+          font-size: 1rem;
+          line-height: 1.65rem;
+          text-align: center;
+          vertical-align: center;
+        }
+      }
+
+      @media (hover: hover) {
+        a:hover {
+          color: $primary;
+        }
+      }
+
+      #toggle-nav-btn {
+        display: none;
+      }
     }
   }
 }
@@ -91,17 +99,19 @@ header {
 // Searchbar
 
 .searchbar {
-  position: fixed;
+  overflow: visible;
+  position: absolute;
   padding: 1rem;
-  width: 30rem;
-  top: calc($headerHeight + 1rem);
-  right: 9%;
+  // width: 30rem;
+  top: calc($headerHeight + ($headerPaddingY * 2));
+  right: 0;
   background-color: $white;
-  border: 0.3rem solid $primary;
+  border: 0.3rem solid $black;
   border-radius: 0.8rem;
   z-index: -100;
   text-align: center;
   transform: translateX(+125%);
+  // transform: scale(0%);
   opacity: 0;
   transition:  0.4s ease-in-out;
 
@@ -111,7 +121,6 @@ header {
     font-weight: 600;
     outline: none;
     width: 89%;
-    // border-bottom: 0.2rem solid $greyMedium;
     padding-right: 1rem;
   }
 
@@ -124,64 +133,51 @@ header {
 .searchbar.active {
   box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
   transform: translateY(0);
+  // transform: scale(1);
   opacity: 1;
 }
 
 
 // Responsive
 
-@media (max-width: 1200px) {
-  header {
-    .searchbar {
-      right: 6%;
-    }
-  }
-}
-
 @media (max-width: 900px) {
   
   header {
+    .header-flex {
 
-    // Mobile navbar
-    .navbar {
-      @include flex(center, center);
-      flex-direction: column;
-      position: fixed;
-      gap: 2rem;
-      padding: 2rem;
-      top: calc($headerHeight + 1rem);
-      // left: 2rem;
-      right: 3rem;
-      background-color: $white;
-      border: 0.3rem solid $primary;
-      border-radius: 0.8rem;
-      transform: translateX(+150%);
-      opacity: 0;
-    }
-
-    // Mobile icons nav
-    .icons-nav {
-      #toggle-nav-btn {
-        display: inline-block;
+      // Mobile navbar
+      .navbar {
+        @include flex(center, center);
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        gap: 2rem;
+        padding: 2rem;
+        top: calc($headerHeight + ($headerPaddingY * 2));
+        background-color: $white;
+        border: 0.3rem solid $black;
+        border-radius: 0.8rem;
+        transform: translateX(+150%);
+        opacity: 0;
       }
-    }
 
-    .searchbar {
-      width: auto;
-      left: 3rem;
-      right: 3rem;
+      // Mobile icons nav
+      .icons-nav {
+        #toggle-nav-btn {
+          display: inline-block;
+        }
+      }
     }
   }
 }
-
+ 
 @media (max-width: 600px) {
   header {
-    .searchbar {
-      left: 2rem;
-      right: 2rem;
-    }
-    .navbar {
-      right: 2rem;
+    .header-flex {
+      .searchbar {
+        width: inherit;
+        left: 0;
+      }
     }
   }
 }

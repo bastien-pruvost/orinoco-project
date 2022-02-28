@@ -1,5 +1,5 @@
 .product-section {
-  min-height: calc(100vh - $headerHeight - 11.1rem);
+  min-height: calc(100vh - $headerHeight - ($headerPaddingY * 2) - 9.1rem);
 }
 
 .product {
@@ -40,24 +40,17 @@
       gap: 1rem;
       font-size: 2rem;
       color: $greyMedium;
-      label {
-        width: max-content;
-      }
-      select, input {
-        font-family: $textFont;
-        font-size: 1.8rem;
-        border: 0.1rem solid $primary;
-        outline: none;
-        border-radius: 0.3rem;
-        padding: 0.2rem 1rem;
-      }
   }
   &__quantity {
     padding-bottom: 1.5rem;
     caret-color: $greyLight;
+    input {
+      width: 8rem;
+    }
   }
   &__lense-choice {
     padding-bottom: 3rem;
+    flex-wrap: wrap;
   }
   &__price {
     font-size: 2.6rem;
@@ -70,6 +63,7 @@
     padding: 1rem 2.2rem;
   }
 }
+
 
 .cart-popup {
   position: fixed;
@@ -117,33 +111,19 @@
 
 @media (max-width: 600px) {
 
-  .product-container {
-    padding: 0;
-  }
-
   .product {
     gap: 2rem;
     padding: 2rem;
-    min-height: calc(100vh - $headerHeight);
+    &__price {
+      text-align: center;
+    }
+    .button {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     &__img {
       max-width: 90%;
-    }
-    &__details {
-      text-align: center;
-    }
-    &__name {
-      text-align: center;
-    }
-    &__quantity {
-      justify-content: center;
-      text-align: center;
-      margin: 0 auto;
-    }
-    &__lense-choice {
-      flex-direction: column;
-    }
-    .price-buy {
-      flex-direction: column;
     }
   }
 }

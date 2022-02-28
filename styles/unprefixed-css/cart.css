@@ -13,7 +13,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 9rem;
+  scroll-padding-top: 8rem;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -30,8 +30,12 @@ html::-webkit-scrollbar-thumb {
   box-shadow: 0.1rem 0.1rem 0.4rem #85858528;
 }
 
-body {
-  overflow-x: hidden;
+html, body {
+  position: relative;
+}
+
+input::-webkit-inner-spin-button {
+  opacity: 1;
 }
 
 html {
@@ -62,7 +66,7 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Red Hat Display", sans-serif;
   font-size: 3.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
   text-align: center;
   font-weight: 900;
 }
@@ -76,55 +80,47 @@ p {
   color: #505050;
 }
 
-header {
-  padding: 2rem calc((100vw - 1200px) / 2 + 5rem);
+.wrapper, .wrapper--footer, .wrapper--medium, .wrapper--large, .wrapper--header {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
-section {
-  padding: 4rem calc((100vw - 1200px) / 2 + 5rem);
+.wrapper--header {
+  max-width: 1200px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-footer {
-  padding: 4rem calc((100vw - 1200px) / 2 + 5rem);
+.wrapper--large {
+  max-width: 1200px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
-@media (max-width: 1200px) {
-  header {
-    padding: 2rem 5rem;
-  }
-
-  section {
-    padding: 3rem 5rem;
-  }
-
-  footer {
-    padding: 4rem 5rem;
-  }
+.wrapper--medium {
+  max-width: 1000px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
+
+.wrapper--footer {
+  max-width: 1200px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 @media (max-width: 900px) {
-  header {
-    padding: 2rem 5rem;
-  }
-
-  section {
-    padding: 4rem 5rem;
-  }
-
-  footer {
-    padding: 4rem 5rem;
+  .wrapper, .wrapper--header, .wrapper--large, .wrapper--medium, .wrapper--footer {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 @media (max-width: 600px) {
-  header {
-    padding: 2rem 2%;
-  }
-
-  section {
-    padding: 3rem 2%;
-  }
-
-  footer {
-    padding: 4rem 2%;
+  .wrapper, .wrapper--header, .wrapper--large, .wrapper--medium, .wrapper--footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 .button {
@@ -139,40 +135,46 @@ footer {
   line-height: 1;
 }
 .button:hover {
-  background: #ffdb39;
+  background: #c08a00;
   border: 0.2rem solid #ffdb39;
 }
 .button:active {
-  background: #c08a00;
+  transform: scale(0.95);
   border: 0.2rem solid #c08a00;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: "Red Hat Display", sans-serif;
-  height: 9rem;
-  background: #FFFFFF;
-  box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
+  overflow: visible;
+  contain: layout;
 }
-header .logo {
+header .header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  font-family: "Red Hat Display", sans-serif;
+  height: 8rem;
+  overflow: visible;
+}
+header .header-flex .logo {
   font-size: 3.5rem;
   overflow: hidden;
   font-weight: 900;
   padding: 0;
-  width: 17rem;
+  width: fit-content;
   text-align: left;
 }
-header .logo span {
+header .header-flex .logo span {
   color: #FFB901;
   font-size: 4rem;
   line-height: 3.5rem;
 }
-header .navbar {
+header .header-flex .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,32 +183,32 @@ header .navbar {
   transition: 0.3s ease-in-out;
   margin: 0 auto;
 }
-header .navbar a {
+header .header-flex .navbar a {
   padding: 0 2rem;
   transition: 0.15s ease-in-out;
 }
 @media (hover: hover) {
-  header .navbar a:hover {
+  header .header-flex .navbar a:hover {
     color: #FFB901;
   }
 }
-header .navbar.active {
+header .header-flex .navbar.active {
   box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
   transform: translateX(0);
   opacity: 1;
 }
-header .icons-nav {
+header .header-flex .icons-nav {
   font-size: 2.6rem;
   position: relative;
   width: 17rem;
   text-align: right;
 }
-header .icons-nav a {
+header .header-flex .icons-nav a {
   margin-left: 2rem;
   transition: 0.15s ease-in-out;
   position: relative;
 }
-header .icons-nav a #cart-count {
+header .header-flex .icons-nav a #cart-count {
   position: absolute;
   width: 100%;
   top: 0;
@@ -218,22 +220,22 @@ header .icons-nav a #cart-count {
   vertical-align: center;
 }
 @media (hover: hover) {
-  header .icons-nav a:hover {
+  header .header-flex .icons-nav a:hover {
     color: #FFB901;
   }
 }
-header .icons-nav #toggle-nav-btn {
+header .header-flex .icons-nav #toggle-nav-btn {
   display: none;
 }
 
 .searchbar {
-  position: fixed;
+  overflow: visible;
+  position: absolute;
   padding: 1rem;
-  width: 30rem;
   top: 10rem;
-  right: 9%;
+  right: 0;
   background-color: #FFFFFF;
-  border: 0.3rem solid #FFB901;
+  border: 0.3rem solid #252525;
   border-radius: 0.8rem;
   z-index: -100;
   text-align: center;
@@ -260,75 +262,219 @@ header .icons-nav #toggle-nav-btn {
   opacity: 1;
 }
 
-@media (max-width: 1200px) {
-  header .searchbar {
-    right: 6%;
-  }
-}
 @media (max-width: 900px) {
-  header .navbar {
+  header .header-flex .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
+    right: 0;
     gap: 2rem;
     padding: 2rem;
     top: 10rem;
-    right: 3rem;
     background-color: #FFFFFF;
-    border: 0.3rem solid #FFB901;
+    border: 0.3rem solid #252525;
     border-radius: 0.8rem;
     transform: translateX(150%);
     opacity: 0;
   }
-  header .icons-nav #toggle-nav-btn {
+  header .header-flex .icons-nav #toggle-nav-btn {
     display: inline-block;
-  }
-  header .searchbar {
-    width: auto;
-    left: 3rem;
-    right: 3rem;
   }
 }
 @media (max-width: 600px) {
-  header .searchbar {
-    left: 2rem;
-    right: 2rem;
-  }
-  header .navbar {
-    right: 2rem;
+  header .header-flex .searchbar {
+    width: inherit;
+    left: 0;
   }
 }
 footer {
+  background: #252525;
+}
+footer .footer-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #252525;
   color: #FFFFFF;
   font-size: 1.8rem;
   font-weight: 400;
 }
-footer i {
+footer .footer-flex i {
   font-size: 3rem;
   padding: 0 1rem;
 }
 
 @media (max-width: 600px) {
-  footer {
-    flex-direction: column;
+  footer .footer-flex {
+    flex-direction: column-reverse;
     gap: 1.5rem;
   }
+}
+input, select {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 1.8rem;
+  border: 0.1rem solid #FFB901;
+  outline: none;
+  border-radius: 0.3rem;
+  padding: 0.2rem 1rem;
+}
 
-  footer :nth-child(1) {
-    order: 2;
+.cart-section {
+  min-height: calc(100vh - 8rem - 2rem - 9.1rem);
+}
+
+.cart {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.1fr 0.9fr;
+  border: 0.1rem solid #85858528;
+  box-shadow: 0.1rem 0.2rem 4rem #85858528;
+  margin: 0 auto;
+}
+.cart > div {
+  padding: 3rem;
+}
+.cart h3 {
+  font-size: 2.5rem;
+  display: block;
+  text-align: start;
+  padding: 0;
+  position: relative;
+}
+.cart h3::after {
+  content: "";
+  height: 2px;
+  width: 7rem;
+  position: absolute;
+  bottom: -1rem;
+  left: 0.1rem;
+  background: #FFB901;
+}
+.cart-summary-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.cart-summary-heading span {
+  font-weight: 700;
+}
+.cart-summary-titles {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 1rem 0;
+  font-weight: 600;
+  text-align: center;
+  color: #505050;
+}
+.cart-summary-titles span:nth-child(1) {
+  text-align: start;
+}
+.cart-summary-titles span:nth-child(4) {
+  text-align: end;
+}
+.cart-summary-list .cart-product {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-areas: "product price1 quantity price2";
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9e9e9;
+}
+.cart-summary-list .cart-product .img-name-lense {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+  font-weight: 500;
+  grid-area: product;
+  gap: 1.5rem;
+}
+.cart-summary-list .cart-product .img-name-lense .cart-product-name {
+  display: block;
+}
+.cart-summary-list .cart-product .img-name-lense .cart-product-lense {
+  font-weight: 400;
+}
+.cart-summary-list .cart-product .img-name-lense .cart-product-img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 20%;
+  min-width: 42px;
+  max-width: 50px;
+}
+.cart-summary-list .cart-product-price {
+  grid-area: price1;
+}
+.cart-summary-list .cart-product-quantity {
+  width: 65%;
+  margin: 0 auto;
+  grid-area: quantity;
+}
+.cart-summary-list .cart-product-total-price {
+  text-align: end;
+  font-weight: 600;
+  grid-area: price2;
+}
+.cart-summary-list .cart-product:nth-child(1) {
+  border-top: 1px solid #e9e9e9;
+}
+.cart-summary-list .cart-product .quantity-container {
+  position: relative;
+}
+.cart-summary-list .cart-product .quantity-container i {
+  color: #505050;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.cart-summary-list .cart-product .quantity-container i:hover {
+  opacity: 0.9;
+}
+.cart-summary .total-order-price {
+  display: block;
+  text-align: right;
+  font-weight: 600;
+  color: #252525;
+}
+.cart-summary .total-order-price span {
+  font-weight: 800;
+}
+.cart-order {
+  background: #e9e9e9;
+  contain: layout;
+  position: relative;
+}
+.cart-order .sticky-container {
+  position: sticky;
+  top: 13rem;
+}
+
+@media (max-width: 900px) {
+  .cart {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .cart {
+    grid-template-columns: 1fr;
   }
 
-  footer :nth-child(2) {
-    order: 1;
+  .cart-summary-titles {
+    display: none;
   }
 
-  footer :nth-child(3) {
-    order: 3;
+  .cart-summary-list .cart-product {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "product product product" "price1 quantity price2";
+  }
+  .cart-summary-list .cart-product .img-name-lense {
+    justify-content: flex-start;
+    padding-bottom: 1.5rem;
+  }
+  .cart-summary-list .cart-product-price {
+    text-align: start;
   }
 }

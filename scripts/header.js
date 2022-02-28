@@ -17,20 +17,20 @@ function toggleBar(trigger, toDisplay, toHide) {
 
   const toDisplayElement = document.getElementById(toDisplay);
 
-  // -- Show search when search button is clicked --
+  // -- Show bar when toggle button is clicked --
   document.getElementById(trigger).addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
     toDisplayElement.classList.toggle("active");
 
-    // -- Hide navbar when searchbar is active --
+    // -- Hide bar when other bar is active --
     if (document.getElementById(toHide).classList.contains("active")) {
       document.getElementById(toHide).classList.remove("active");
     }
 
   });
 
-  // -- Hide searchbar when user click somewhere on the body --
+  // -- Hide bar when user click somewhere on the body --
   document.body.addEventListener("click", function (e) {
     if (toDisplayElement.classList.contains("active") && (!e.target.closest("#" + toDisplay))) {
       e.preventDefault();
@@ -38,8 +38,15 @@ function toggleBar(trigger, toDisplay, toHide) {
     }
   });
 
-  // -- Hide searchbar on scroll --
+  // -- Hide bar on scroll --
   window.addEventListener("scroll", function () {
+    if (toDisplayElement.classList.contains("active")) {
+      toDisplayElement.classList.remove("active");
+    }
+  });
+
+  // -- Hide bar on resize --
+  window.addEventListener("resize", function () {
     if (toDisplayElement.classList.contains("active")) {
       toDisplayElement.classList.remove("active");
     }

@@ -1,9 +1,10 @@
 // -- Global async function --
 (async function () {
-
+  const localStorageCart = JSON.parse(localStorage.getItem("shopCart"));
   const productId = getProductId();
   const product = await getProduct(productId);
   displayProductContent(product);
+  rangeQuantity(product, localStorageCart);
   addToCart(product);
 
 })();
@@ -43,6 +44,19 @@ function displayProductContent(product) {
   }
 };
 
+function rangeQuantity() {
+  document.getElementById("quantity-select").addEventListener("change", (e) => {
+
+    console.log();
+    if (e.target.value <= 0) {
+      e.target.value = 1;
+    }
+    if (e.target.value > 999) {
+      e.target.value = 999;
+    }
+  })
+}
+
 // -- Function to add the product in the cart --
 function addToCart(product) {
 
@@ -51,7 +65,7 @@ function addToCart(product) {
     e.stopPropagation();
 
     // -- Get the quantity and type of lens that the user wants --
-    const quantity = document.getElementById("quantity-select").value;
+    const quantity = parseInt(document.getElementById("quantity-select").value);
     const lense = document.getElementById("lense-select").value;
 
     // -- Const that contains the array retrieved in the Local Storage
@@ -60,10 +74,11 @@ function addToCart(product) {
     // -- Stock data product in an object --
     let productDataForCart = {
       productId: product._id,
+      productImageUrl: product.imageUrl,
       productName: product.name,
       productPrice: product.price,
       productLense: lense,
-      productQuantity: quantity,
+      productQuantity: parseInt(quantity),
     };
 
     // -- Open the "go to cart ?" pop-up
@@ -72,8 +87,22 @@ function addToCart(product) {
     // -- If there is already a cart array in Local Storage --
     if (localStorageCart) {
 
-      // -- Push the product to the array according to quantity --
-      localStorageCart.push(productDataForCart);
+      // -- Const to know if the product is already in cart --
+      let productAlreadyInCart = false;
+      // -- Loop to check if the element is already in the cart and change quantity if it's in the cart--
+      for (const cartItem of localStorageCart) {
+        if (cartItem.productName === product.name && cartItem.productLense === lense) {
+          cartItem.productQuantity += quantity;
+          productAlreadyInCart = true;
+          break;
+        } else {
+          productAlreadyInCart = false;
+        }
+      }
+
+      if (productAlreadyInCart === false) {
+        localStorageCart.push(productDataForCart);
+      }
 
       // -- Put the array in Local Storage --
       localStorage.setItem("shopCart", JSON.stringify(localStorageCart));
@@ -119,5 +148,4 @@ function cartPopup(product, quantity, lense) {
       cartPopup.classList.remove("active")
     }
   })
-
 }

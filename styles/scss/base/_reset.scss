@@ -9,6 +9,7 @@
   text-decoration: none;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
+
 }
 
 html {
@@ -31,6 +32,12 @@ html {
   }
 }
 
-body {
-  overflow-x: hidden;
+html, body {
+  position: relative;
+}
+
+input {
+  &::-webkit-inner-spin-button {
+    opacity: 1;
+  }
 }

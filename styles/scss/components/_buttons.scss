@@ -10,11 +10,11 @@
   line-height: 1;
 
   &:hover {
-    background: $primaryLight;
+    background: $primaryDark;
     border: 0.2rem solid $primaryLight;
   }
   &:active {
-    background: $primaryDark;
+    transform: scale(0.95);
     border: 0.2rem solid $primaryDark;
   }
 }

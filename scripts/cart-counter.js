@@ -12,7 +12,7 @@ function cartCounter() {
   if (localCart) {
 
     for (const product of localCart) {
-      count += parseInt(product.productQuantity);
+      count += product.productQuantity;
     }
 
   } else {
@@ -20,5 +20,7 @@ function cartCounter() {
   }
 
   document.getElementById("cart-count").innerText = count;
+
+  return count;
 
 };

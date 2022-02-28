@@ -28,24 +28,24 @@ $large: 1200px;
 $medium: 900px;
 $small: 600px;
 
-// -- Sections padding --
+// -- Wrappers Padding X --
 
-$smallPaddingX: 2%;
-$mediumPaddingX: 5rem;
-$largePaddingX: 5rem;
-$widePaddingX: calc(((100vw - 1200px) / 2) + $mediumPaddingX);
+$largePaddingX: 4rem;
+$mediumPaddingX: 3rem;
+$smallPaddingX: 2rem;
+
+// -- Wrappers Padding Y --
+
+$headerPaddingY: 1rem;
+
+$wrapperPaddingY: 3rem;
+
+$footerPaddingY: 3rem;
 
 
-$headerPaddingY: 2rem;
+// -- Header Height Without Padding --
 
-$sectionPaddingY: 4rem;
-
-$footerPaddingY: 4rem;
-
-
-// -- Other variables --
-
-$headerHeight: 9rem;
+$headerHeight: 8rem;
 
 
 
