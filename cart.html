@@ -55,11 +55,9 @@
     <section class="cart-section">
       <div class="wrapper--large">
         <div class="cart">
-
           <div class="cart-summary">
-
             <div class="cart-summary-heading">
-              <h3>Votre panier</h3><span id="products-count">3 Articles</span>
+              <h3>Votre panier</h3><span id="products-count">Le panier est vide</span>
             </div>
 
             <div class="cart-summary-titles">
@@ -68,6 +66,7 @@
               <span class="column-title">Quantité</span>
               <span class="column-title">Prix total</span>
             </div>
+
             <ul class="cart-summary-list" id="cart-summary-list">
 
               <template id="cart-product-template">
@@ -75,27 +74,24 @@
                   <a href="#" class="img-name-lense" id="img-name-lense">
                     <img src="./images/vcam.jpg" alt="" class="cart-product-img" id="cart-product-img">
                     <div>
-                      <span class="cart-product-name" id="cart-product-name">Nikon SP3200<br></span>
-                      <span class="cart-product-lense" id="cart-product-lense">60mm H2 3c25</span>
+                      <span class="cart-product-name" id="cart-product-name"></span>
+                      <span class="cart-product-lense" id="cart-product-lense"></span>
                     </div>
                   </a>
-                  <span class="cart-product-price" id="cart-product-price">3699 €</span>
+                  <span class="cart-product-price" id="cart-product-price">0 €</span>
                   <div class="quantity-container">
 
                     <input class="cart-product-quantity" id="cart-product-quantity" type="number" min="1" max="999"
                       value="" autocomplete="off">
                     <i class="fa-solid fa-trash-can" id="delete-button"></i>
                   </div>
-                  <span class="cart-product-total-price" id="cart-product-total-price">36990 €</span>
+                  <span class="cart-product-total-price" id="cart-product-total-price"></span>
                 </li>
               </template>
 
             </ul>
 
-
-            <p class="total-order-price">Total de la commande : <br><span id="inject-total-order-price">139000 €</span>
-            </p>
-
+            <p class="total-order-price">Total de la commande : <br><span id="inject-total-order-price">0 €</span></p>
 
           </div>
 
@@ -105,8 +101,6 @@
               <form action="">
               </form>
             </div>
-
-
           </div>
 
         </div>

@@ -13,6 +13,7 @@
 
 })();
 
+// -- Display an item in the cart list --
 function displayCartItem(cartItem) {
   const cartItemTemplate = document.getElementById("cart-product-template");
   const cartItemClone = document.importNode(cartItemTemplate.content, true);
@@ -23,15 +24,13 @@ function displayCartItem(cartItem) {
   cartItemClone.getElementById("cart-product-name").textContent = cartItem.productName;
   cartItemClone.getElementById("cart-product-lense").textContent = cartItem.productLense;
   cartItemClone.getElementById("cart-product-price").textContent = `${cartItem.productPrice / 100} €`;
-
   cartItemClone.getElementById("cart-product-quantity").value = `${cartItem.productQuantity}`;
   cartItemClone.getElementById("cart-product-quantity").dataset.productName = cartItem.productName;
   cartItemClone.getElementById("cart-product-quantity").dataset.productLense = cartItem.productLense;
-
   cartItemClone.getElementById("cart-product-total-price").textContent = `${cartItem.productPrice * cartItem.productQuantity / 100} €`;
+
   cartItemClone.getElementById("cart-product-total-price").dataset.productName = cartItem.productName;
   cartItemClone.getElementById("cart-product-total-price").dataset.productLense = cartItem.productLense;
-
   cartItemClone.getElementById("delete-button").dataset.productName = cartItem.productName;
   cartItemClone.getElementById("delete-button").dataset.productLense = cartItem.productLense;
 
@@ -51,12 +50,13 @@ function changeQuantity(localStorageCart) {
   const quantityInputs = document.querySelectorAll(".cart-product-quantity");
 
   quantityInputs.forEach(input => {
-    input.addEventListener("change", (e) => {
+
+    input.addEventListener("input", (e) => {
 
       for (const cartItem of localStorageCart) {
         if (cartItem.productName === e.target.dataset.productName && cartItem.productLense === e.target.dataset.productLense) {
-
-          quantityRange(e, cartItem);
+          console.log(e.target.value);
+          quantityRangeLimiter(e, cartItem);
           cartItem.productQuantity = parseInt(e.target.value);
           localStorage.setItem("shopCart", JSON.stringify(localStorageCart));
 
@@ -95,13 +95,6 @@ function displayProductCount() {
   document.getElementById("products-count").textContent = `${cartCounter()} Articles`
 }
 
-function quantityRange(e, cartItem) {
-  if (e.target.value <= 0) {
-    e.target.value = 1;
-    cartItem.productQuantity = 1;
-  }
-  if (e.target.value > 999) {
-    e.target.value = 999;
-    cartItem.productQuantity = 999
-  }
+function quantityRangeLimiter(e, cartItem) {
+  // AJOUTER EVENT LISTENER KEYDOWN !!! 
 }

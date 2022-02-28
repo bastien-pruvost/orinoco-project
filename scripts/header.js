@@ -1,15 +1,11 @@
 // -- Global function --
 (function () {
 
-  // toggleNav();
   toggleBar("toggle-nav-btn", "navbar", "searchbar");
+
   if (document.getElementById("toggle-search-btn")) {
-    // toggleSearch();
     toggleBar("toggle-search-btn", "searchbar", "navbar");
   }
-
-  // toggleBar("toggle-search-btn", "searchbar", "navbar");
-  // toggleBar("toggle-nav-btn", "navbar", "searchbar");
 
 })();
 

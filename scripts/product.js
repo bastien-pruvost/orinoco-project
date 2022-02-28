@@ -45,14 +45,14 @@ function displayProductContent(product) {
 };
 
 function rangeQuantity() {
-  document.getElementById("quantity-select").addEventListener("change", (e) => {
-
-    console.log();
-    if (e.target.value <= 0) {
-      e.target.value = 1;
-    }
-    if (e.target.value > 999) {
-      e.target.value = 999;
+  document.getElementById("quantity-select").addEventListener("input", (e) => {
+    if (e.target.value) {
+      if (e.target.value <= 0) {
+        e.target.value = 1;
+      }
+      if (e.target.value > 999) {
+        e.target.value = 999;
+      }
     }
   })
 }
@@ -81,7 +81,7 @@ function addToCart(product) {
       productQuantity: parseInt(quantity),
     };
 
-    // -- Open the "go to cart ?" pop-up
+    // -- Open the "go to cart" pop-up
     cartPopup(product, quantity, lense);
 
     // -- If there is already a cart array in Local Storage --
@@ -89,22 +89,21 @@ function addToCart(product) {
 
       // -- Const to know if the product is already in cart --
       let productAlreadyInCart = false;
-      // -- Loop to check if the element is already in the cart and change quantity if it's in the cart--
+      // -- Loop to check if the element is already in the cart --
       for (const cartItem of localStorageCart) {
+        // -- If the product is already in cart, change quantity in the object --
         if (cartItem.productName === product.name && cartItem.productLense === lense) {
           cartItem.productQuantity += quantity;
           productAlreadyInCart = true;
           break;
-        } else {
-          productAlreadyInCart = false;
         }
       }
-
+      // -- If product is not already in cart add a new object with product data --
       if (productAlreadyInCart === false) {
         localStorageCart.push(productDataForCart);
       }
 
-      // -- Put the array in Local Storage --
+      // -- Put the new array in Local Storage --
       localStorage.setItem("shopCart", JSON.stringify(localStorageCart));
 
       // -- If thers isn't a cart array in Local Storage --
@@ -112,7 +111,7 @@ function addToCart(product) {
       // -- Create the array --
       let localStorageCart = [];
 
-      // -- Push the product to the array according to quantity --
+      // -- Push the product object in the array --
       localStorageCart.push(productDataForCart);
 
       // -- Put the array in Local Storage --
@@ -121,7 +120,6 @@ function addToCart(product) {
 
     // -- Add the quantity in the cart counter --
     cartCounter();
-
   })
 };
 
