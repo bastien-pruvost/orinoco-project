@@ -9,7 +9,7 @@
 })();
 
 // -- Function to get products from API --
-function getProducts() {
+async function getProducts() {
   return fetch(`${apiUrl}/api/cameras`)
     .then(function (res) { return res.json(); })
     .then(function (products) { return products; })

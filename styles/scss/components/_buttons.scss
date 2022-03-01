@@ -3,15 +3,17 @@
   border-radius: 0.5rem;
   font-weight: 600;
   padding: 1rem 2rem;
-  transition: 0.15s ease-in-out;
+  transition: 0.15s ease-out;
   border: 0.2rem solid $primary;
   color: $black;
   background: $primary;
   line-height: 1;
+  font-size: 2rem;
+  cursor: pointer;
 
   &:hover {
     background: $primaryDark;
-    border: 0.2rem solid $primaryLight;
+    border: 0.2rem solid $primaryDark;
   }
   &:active {
     transform: scale(0.95);

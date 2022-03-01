@@ -1,8 +1,13 @@
-input, select {
+input:not([type=submit]), select {
   font-family: $textFont;
   font-size: 1.8rem;
   border: 0.1rem solid $primary;
   outline: none;
   border-radius: 0.3rem;
   padding: 0.2rem 1rem;
+  &:focus {
+    border-color: $primaryDark;
+    box-shadow: inset 0 -1px 1px transparentize($primaryDark , 0.75);
+    background: lighten($greyLight, 6.5%);
+  }
 }

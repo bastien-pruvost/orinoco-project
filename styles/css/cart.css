@@ -130,19 +130,21 @@ p {
   border-radius: 0.5rem;
   font-weight: 600;
   padding: 1rem 2rem;
-  transition: 0.15s ease-in-out;
-  border: 0.2rem solid #FFB901;
+  transition: 0.15s ease-out;
+  border: 0.2rem solid #ffc100;
   color: #252525;
-  background: #FFB901;
+  background: #ffc100;
   line-height: 1;
+  font-size: 2rem;
+  cursor: pointer;
 }
 .button:hover {
-  background: #c08a00;
-  border: 0.2rem solid #ffdb39;
+  background: #dfa30c;
+  border: 0.2rem solid #dfa30c;
 }
 .button:active {
   transform: scale(0.95);
-  border: 0.2rem solid #c08a00;
+  border: 0.2rem solid #dfa30c;
 }
 
 header {
@@ -175,7 +177,7 @@ header .header-flex .logo {
   text-align: left;
 }
 header .header-flex .logo span {
-  color: #FFB901;
+  color: #ffc100;
   font-size: 4rem;
   line-height: 3.5rem;
 }
@@ -194,7 +196,7 @@ header .header-flex .navbar a {
 }
 @media (hover: hover) {
   header .header-flex .navbar a:hover {
-    color: #FFB901;
+    color: #ffc100;
   }
 }
 header .header-flex .navbar.active {
@@ -210,7 +212,7 @@ header .header-flex .icons-nav {
 }
 header .header-flex .icons-nav a {
   margin-left: 2rem;
-  transition: 0.15s ease-in-out;
+  transition: 0.15s ease-out;
   position: relative;
 }
 header .header-flex .icons-nav a #cart-count {
@@ -226,7 +228,7 @@ header .header-flex .icons-nav a #cart-count {
 }
 @media (hover: hover) {
   header .header-flex .icons-nav a:hover {
-    color: #FFB901;
+    color: #ffc100;
   }
 }
 header .header-flex .icons-nav #toggle-nav-btn {
@@ -308,6 +310,14 @@ footer .footer-flex {
 footer .footer-flex i {
   font-size: 3rem;
   padding: 0 1rem;
+  transition: 0.15s ease-out;
+}
+footer .footer-flex i:hover {
+  transform: scale(1.1);
+  color: #ffc100;
+}
+footer .footer-flex a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -316,13 +326,18 @@ footer .footer-flex i {
     gap: 1.5rem;
   }
 }
-input, select {
+input:not([type=submit]), select {
   font-family: "Red Hat Text", sans-serif;
   font-size: 1.8rem;
-  border: 0.1rem solid #FFB901;
+  border: 0.1rem solid #ffc100;
   outline: none;
   border-radius: 0.3rem;
   padding: 0.2rem 1rem;
+}
+input:not([type=submit]):focus, select:focus {
+  border-color: #dfa30c;
+  box-shadow: inset 0 -1px 1px rgba(223, 163, 12, 0.25);
+  background: #fafafa;
 }
 
 .cart-section {
@@ -354,7 +369,7 @@ input, select {
   position: absolute;
   bottom: -1rem;
   left: 0.1rem;
-  background: #FFB901;
+  background: #ffc100;
 }
 .cart-summary-heading {
   display: flex;
@@ -414,6 +429,7 @@ input, select {
 }
 .cart-summary-list .cart-product-price {
   grid-area: price1;
+  font-size: 1.8rem;
 }
 .cart-summary-list .cart-product-quantity {
   width: 65%;
@@ -427,9 +443,6 @@ input, select {
 }
 .cart-summary-list .cart-product:nth-child(1) {
   border-top: 1px solid #e9e9e9;
-}
-.cart-summary-list .cart-product .quantity-container {
-  position: relative;
 }
 .cart-summary-list .cart-product .quantity-container i {
   color: #505050;
@@ -447,6 +460,7 @@ input, select {
 }
 .cart-summary .total-order-price span {
   font-weight: 800;
+  font-size: 2.4rem;
 }
 .cart-order {
   background: #e9e9e9;
@@ -457,8 +471,104 @@ input, select {
   position: -webkit-sticky;
   position: sticky;
   top: 13rem;
+  font-size: 1.8rem;
+}
+.cart-order .sticky-container h3 {
+  margin-bottom: 3rem;
+}
+.cart-order .sticky-container .input-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto 0.5rem;
+  min-height: 6.5rem;
+  position: relative;
+}
+.cart-order .sticky-container .input-container label {
+  display: block;
+  margin: 0.5rem 0.5rem;
+  font-weight: 500;
+}
+.cart-order .sticky-container .input-container input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+.cart-order .sticky-container .policy-container {
+  margin: 2rem auto;
+  display: block;
+}
+.cart-order .sticky-container .policy-container .policy-text {
+  font-size: 1.7rem;
+}
+.cart-order .sticky-container .policy-container .policy-text a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+.cart-order .sticky-container .button {
+  display: block;
+  margin: 2rem auto;
+}
+.cart-order .sticky-container .alert {
+  display: block;
+  color: #b33a15;
+  transition: 0.2s ease-out;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  font-size: 1.7rem;
+  transform: translateY(-2rem);
+  line-height: 0;
+  opacity: 0;
+}
+.cart-order .sticky-container .error > input[type=text]:not(:focus) ~ .alert {
+  transform: translateY(0rem);
+  line-height: 1;
+  opacity: 1;
+  padding-top: 0.5rem;
+}
+.cart-order .sticky-container .error > input[type=text]:not(:focus) {
+  color: #b33a15;
+  border-color: #b33a15;
+  -webkit-animation: wizz 0.15s linear 3;
+          animation: wizz 0.15s linear 3;
+}
+.cart-order .sticky-container .error > input[type=text]:not(:focus):focus {
+  border-color: #b33a15;
+  box-shadow: inset 0 -1px 1px #b33a15;
+}
+.cart-order .sticky-container .error > input:not([type=text]):not(:checked) ~ .alert {
+  transform: translateY(0rem);
+  line-height: 1;
+  opacity: 1;
+  padding-top: 0.5rem;
 }
 
+@-webkit-keyframes wizz {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-5px);
+  }
+  66% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes wizz {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-5px);
+  }
+  66% {
+    transform: translateX(5px);
+  }
+}
 @media (max-width: 900px) {
   .cart {
     grid-template-columns: 1fr;

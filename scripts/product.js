@@ -7,20 +7,20 @@
   rangeQuantity(product, localStorageCart);
   addToCart(product);
 
-})();
+})()
 
 // -- Function to get actual product id --
 function getProductId() {
   return new URL(location.href).searchParams.get("id");
-};
+}
 
 // -- Function to get actual product from API with retrieved Id --
-function getProduct(productId) {
+async function getProduct(productId) {
   return fetch(`${apiUrl}/api/cameras/${productId}`)
     .then(function (res) { return res.json() })
     .then(function (product) { return product })
     .catch(function (err) { alert(err) });
-};
+}
 
 // -- Function to dynamically display the product content --
 function displayProductContent(product) {
@@ -42,16 +42,18 @@ function displayProductContent(product) {
 
     document.getElementById("lense-select").appendChild(lenseClone);
   }
-};
+}
 
-function rangeQuantity() {
+// -- Function to limit the current article quantity to 99 --
+
+function rangeQuantity(product, localStorageCart) {
   document.getElementById("quantity-select").addEventListener("input", (e) => {
     if (e.target.value) {
       if (e.target.value <= 0) {
         e.target.value = 1;
       }
-      if (e.target.value > 999) {
-        e.target.value = 999;
+      if (e.target.value > 99) {
+        e.target.value = 99;
       }
     }
   })
@@ -78,8 +80,8 @@ function addToCart(product) {
       productName: product.name,
       productPrice: product.price,
       productLense: lense,
-      productQuantity: parseInt(quantity),
-    };
+      productQuantity: parseInt(quantity)
+    }
 
     // -- Open the "go to cart" pop-up
     cartPopup(product, quantity, lense);
@@ -121,29 +123,29 @@ function addToCart(product) {
     // -- Add the quantity in the cart counter --
     cartCounter();
   })
-};
+}
 
 
 // -- Function to open and close the "Go to cart" popup
 function cartPopup(product, quantity, lense) {
   const cartPopup = document.getElementById("cart-popup");
 
-  document.getElementById("popup-inject-name-lense").innerText = `${product.name} (Lentille ${lense})`
-  document.getElementById("popup-inject-quantity").innerText = `Quantité : ${quantity}`
+  document.getElementById("popup-inject-name-lense").innerText = `${product.name} (Lentille ${lense})`;
+  document.getElementById("popup-inject-quantity").innerText = `Quantité : ${quantity}`;
 
-  cartPopup.classList.add("active")
+  cartPopup.classList.add("active");
 
   // -- Close popup if user click on "continue shopping"
   document.getElementById("continue-shopping-btn").addEventListener("click", function (e) {
     e.preventDefault();
-    cartPopup.classList.remove("active")
-  });
+    cartPopup.classList.remove("active");
+  })
 
   // -- Close popup if user click somewhere on the body --
   document.body.addEventListener("click", function (e) {
     if (!e.target.closest(".cart-popup") && cartPopup.classList.contains("active")) {
       e.preventDefault();
-      cartPopup.classList.remove("active")
+      cartPopup.classList.remove("active");
     }
   })
 }

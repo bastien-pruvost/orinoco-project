@@ -98,7 +98,55 @@
           <div class="cart-order">
             <div class="sticky-container">
               <h3>Finaliser la commande</h3>
-              <form action="">
+              <form action="#" class="form" id="form">
+
+                <div class="input-container" id="firstname-container">
+                  <label for="firstname">Prénom :</label>
+                  <input type="text" autocomplete="off" id="firstname" placeholder="" maxlength="38">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="input-container" id="lastname-container">
+                  <label for="lastname">Nom :</label>
+                  <input type="text" autocomplete="off" id="lastname" placeholder="" maxlength="38">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="input-container" id="email-container">
+                  <label for="email">Email :</label>
+                  <input type="text" autocomplete="off" id="email" placeholder="">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="input-container" id="address-container">
+                  <label for="address">Adresse :</label>
+                  <input type="text" autocomplete="off" id="address" placeholder="">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="input-container" id="zip-container">
+                  <label for="zip">Code postal :</label>
+                  <input type="text" autocomplete="off" id="zip" placeholder="" maxlength="5">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="input-container" id="city-container">
+                  <label for="city">Ville :</label>
+                  <input type="text" autocomplete="off" id="city" placeholder="">
+                  <span class="alert"></span>
+                </div>
+
+                <div class="policy-container" id="policy-container">
+                  <input type="checkbox" id="policy-check">
+                  <label for="policy-check" class="policy-text">En cochant cette case, j'accepte les <a
+                      href="#">conditions générales de ventes</a></label>
+                  <span class="alert">Test</span>
+                </div>
+
+                <div class="submit-container" id="submit-container">
+                  <input type="submit" value="Valider ma commande" class="button">
+                  <span class="alert"></span>
+                </div>
               </form>
             </div>
           </div>
