@@ -252,6 +252,10 @@ header .header-flex .icons-nav #toggle-nav-btn {
   outline: none;
   width: 89%;
   padding-right: 1rem;
+  border: none !important;
+}
+.searchbar input:focus {
+  box-shadow: none !important;
 }
 .searchbar i {
   color: #505050;
@@ -333,4 +337,27 @@ input:not([type=submit]):focus, select:focus {
   border-color: #dfa30c;
   box-shadow: inset 0 -1px 1px rgba(223, 163, 12, 0.25);
   background: #fafafa;
+}
+
+.confirm-section {
+  min-height: calc(100vh - 8rem - 2rem - 9.1rem);
+}
+
+.confirm {
+  text-align: center;
+}
+.confirm h3 {
+  padding-bottom: 4rem;
+}
+.confirm p {
+  padding-bottom: 2rem;
+}
+.confirm p span {
+  font-weight: 600;
+}
+.confirm a {
+  display: block;
+  font-weight: 600;
+  text-decoration: underline;
+  padding-top: 3rem;
 }

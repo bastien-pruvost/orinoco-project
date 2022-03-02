@@ -252,6 +252,10 @@ header .header-flex .icons-nav #toggle-nav-btn {
   outline: none;
   width: 89%;
   padding-right: 1rem;
+  border: none !important;
+}
+.searchbar input:focus {
+  box-shadow: none !important;
 }
 .searchbar i {
   color: #505050;

@@ -1,17 +1,26 @@
 (async function () {
   const localStorageCart = JSON.parse(localStorage.getItem("shopCart"));
-  for (let cartItem of localStorageCart) {
-    displayCartItem(cartItem);
-  }
 
-  displayTotalOrderPrice(localStorageCart);
-  changeQuantity(localStorageCart);
-  deleteItem(localStorageCart);
-  displayProductCount();
-  policyChecker();
-  formChecker();
-  sendOrder(localStorageCart);
+  main(localStorageCart);
+
 })();
+
+function main(localStorageCart) {
+  if (localStorageCart) {
+
+    for (let cartItem of localStorageCart) {
+      displayCartItem(cartItem);
+    }
+
+    displayTotalOrderPrice(localStorageCart);
+    changeQuantity(localStorageCart);
+    deleteItem(localStorageCart);
+    displayProductCount();
+    policyChecker();
+    formChecker();
+    sendOrder(localStorageCart);
+  }
+}
 
 // ------------ Cart features ------------
 
@@ -48,6 +57,8 @@ function displayTotalOrderPrice(localStorageCart) {
     totalOrderPrice += (cartItem.productPrice * cartItem.productQuantity / 100);
   }
   document.getElementById("inject-total-order-price").textContent = `${totalOrderPrice} €`;
+
+  localStorage.setItem("totalOrderPrice", JSON.stringify(totalOrderPrice))
 }
 
 // -- Allows the user to change the quantity with the inputs --
@@ -63,7 +74,7 @@ function changeQuantity(localStorageCart) {
       for (const cartItem of localStorageCart) {
 
         // -- Use the datasets to target the right object when we use quantity input --
-        if (cartItem.productName === e.target.dataset.productName && cartItem.productLense === e.target.dataset.productLense) {
+        if (e.target.value && (cartItem.productName === e.target.dataset.productName && cartItem.productLense === e.target.dataset.productLense)) {
 
           // -- Change the quantity in the right object in cart array --
           cartItem.productQuantity = parseInt(e.target.value);
@@ -73,6 +84,7 @@ function changeQuantity(localStorageCart) {
 
           // -- Refresh the product total price when we change quantity --
           e.target.parentElement.nextElementSibling.textContent = `${cartItem.productQuantity * cartItem.productPrice / 100} €`;
+
         }
       }
       // -- Refresh the total order price and the two products counter in the header and in the cart --
@@ -269,10 +281,12 @@ function sendOrder(localStorageCart) {
 
     if ((firstnameOutput && lastnameOutput && emailOutput && addressOutput && zipOutput && cityOutput && policyOutput)) {
 
+      localStorage.removeItem("order");
+
       let products = [];
       for (const cartItem of localStorageCart) {
         for (let i = 0; i < cartItem.productQuantity; i++) {
-          products.push(cartItem.productId)
+          products.push(cartItem.productId);
         }
       }
 
@@ -296,8 +310,8 @@ function sendOrder(localStorageCart) {
       fetch(`${apiUrl}/api/cameras/order`, requestSettings)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           localStorage.setItem("order", JSON.stringify(data));
+          window.location.href = `../confirm.html?orderId=${data.orderId}`
         })
         .catch((err) => console.log("erreur : " + err))
 

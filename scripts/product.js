@@ -67,8 +67,10 @@ function addToCart(product) {
     e.stopPropagation();
 
     // -- Get the quantity and type of lens that the user wants --
-    const quantity = parseInt(document.getElementById("quantity-select").value);
+    let quantity = parseInt(document.getElementById("quantity-select").value);
     const lense = document.getElementById("lense-select").value;
+
+    if (!quantity) { quantity = 1 }
 
     // -- Const that contains the array retrieved in the Local Storage
     let localStorageCart = JSON.parse(localStorage.getItem("shopCart"));

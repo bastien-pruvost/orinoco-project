@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Orinoco | Accueil</title>
+  <title>Orinoco | Confirmation</title>
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/css/confirm.css">
@@ -20,7 +20,7 @@
 
 <body>
 
-  <!-- Fixed Header -->
+  <!-- Header -->
   <header>
     <div class="wrapper--header">
       <div class="header-flex">
@@ -42,7 +42,8 @@
 
         <div class="searchbar" id="searchbar">
           <form action="#">
-            <input type="text" placeholder="Rechercher"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+            <input type="text" placeholder="Pas encore disponible"><a href=""><i
+                class="fa-solid fa-magnifying-glass"></i></a>
           </form>
         </div>
       </div>
@@ -52,7 +53,19 @@
   <!-- Main -->
   <main>
 
+    <section class="confirm-section">
+      <div class="wrapper--medium">
+        <div class="confirm">
+          <h3>Confirmation de votre commande</h3>
+          <p>Votre commande a bien été validé</p>
+          <p>Montant total de votre commande : <span id="order-price"></span></p>
+          <p>Voici votre numéro de commande : <span id="order-id"></span></p>
 
+          <p>Nous vous remercions pour votre confiance</p>
+          <a href="./index.html">Retourner a l'accueil</a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
@@ -77,8 +90,8 @@
 
   <!-- JavaScript Link -->
   <script src="./scripts/config.js"></script>
-  <script src="./scripts/header.js"></script>
   <script src="./scripts/cart-counter.js"></script>
+  <script src="./scripts/header.js"></script>
   <script src="./scripts/confirm.js"></script>
 
 </body>

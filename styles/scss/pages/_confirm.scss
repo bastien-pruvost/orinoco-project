@@ -1,0 +1,23 @@
+  .confirm-section {
+    min-height: calc(100vh - $headerHeight - ($headerPaddingY * 2) - 9.1rem);
+  }
+
+  .confirm {
+    text-align: center;
+    h3 {
+      padding-bottom: 4rem;
+    }
+
+    p {
+      padding-bottom: 2rem;
+      span {
+        font-weight: 600;
+      }
+    }
+    a {
+      display: block;
+      font-weight: 600;
+      text-decoration: underline;
+      padding-top: 3rem;
+    }
+  }
