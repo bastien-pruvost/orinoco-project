@@ -5,7 +5,6 @@ header {
   top: 0;
   z-index: 1000;
   overflow: visible;
-  contain: layout;
   
   .header-flex {
     @include flex(space-between, center);
@@ -36,12 +35,13 @@ header {
       @include flex (center, center);
       flex-direction: row;
       font-weight: 800;
-      transition:  0.3s ease-in-out;
+      transition:  0.3s ease-out;
       margin: 0 auto;
+      visibility: hidden;
 
       a {
         padding: 0 2rem;
-        transition: 0.15s ease-in-out;
+        transition: 0.15s ease-out;
       }
 
       @media (hover: hover) {
@@ -55,8 +55,9 @@ header {
     // Mobile navbar when active
     .navbar.active {
       box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
+      visibility: visible;
     }
 
     // Icons nav
@@ -99,21 +100,21 @@ header {
 // Searchbar
 
 .searchbar {
-  overflow: visible;
+  visibility: hidden;
   position: absolute;
   padding: 1rem;
-  // width: 30rem;
+  width: 30rem;
   top: calc($headerHeight + ($headerPaddingY * 2));
   right: 0;
   background-color: $white;
   border: 0.3rem solid $black;
   border-radius: 0.8rem;
-  z-index: -100;
+  z-index: -1000000;
   text-align: center;
-  transform: translateX(+125%);
-  // transform: scale(0%);
+  transform: translateY(+100%);
   opacity: 0;
-  transition:  0.4s ease-in-out;
+  transition: 0.3s ease-out;
+
 
   input {
     font-family: $textFont;
@@ -124,7 +125,6 @@ header {
     padding-right: 1rem;
     border: none !important;
     &:focus {
-      // background: white !important;
       box-shadow: none !important
     }
   }
@@ -138,8 +138,8 @@ header {
 .searchbar.active {
   box-shadow: 0.2rem 0.1rem 0.8rem $shadowColor;
   transform: translateY(0);
-  // transform: scale(1);
   opacity: 1;
+  visibility: visible;
 }
 
 
@@ -153,16 +153,17 @@ header {
       // Mobile navbar
       .navbar {
         @include flex(center, center);
-        flex-direction: column;
+        flex-direction: row;
         position: absolute;
+        left: 0;
         right: 0;
-        gap: 2rem;
+        gap: 0rem;
         padding: 2rem;
         top: calc($headerHeight + ($headerPaddingY * 2));
         background-color: $white;
         border: 0.3rem solid $black;
         border-radius: 0.8rem;
-        transform: translateX(+150%);
+        transform: translateY(+100%);
         opacity: 0;
       }
 
@@ -180,7 +181,7 @@ header {
   header {
     .header-flex {
       .searchbar {
-        width: inherit;
+        width: 100%;
         left: 0;
       }
     }

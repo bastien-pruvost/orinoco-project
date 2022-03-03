@@ -79,6 +79,7 @@
   padding: 2.5rem;
   text-align: center;
   display: block;
+  visibility: hidden;
   opacity: 0;
   transition: 0.3s ease-in-out;
   &__product-text {
@@ -102,6 +103,7 @@
     margin: 0.5rem;
   }
   &.active {
+    visibility: visible;
     opacity: 1;
     transform: translate(calc(-50%), -50%);
   }

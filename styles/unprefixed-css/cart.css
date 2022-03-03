@@ -30,7 +30,7 @@ html::-webkit-scrollbar-thumb {
   box-shadow: 0.1rem 0.1rem 0.4rem #85858528;
 }
 
-html, body {
+body {
   position: relative;
 }
 
@@ -152,7 +152,6 @@ header {
   top: 0;
   z-index: 1000;
   overflow: visible;
-  contain: layout;
 }
 header .header-flex {
   display: flex;
@@ -182,12 +181,13 @@ header .header-flex .navbar {
   align-items: center;
   flex-direction: row;
   font-weight: 800;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-out;
   margin: 0 auto;
+  visibility: hidden;
 }
 header .header-flex .navbar a {
   padding: 0 2rem;
-  transition: 0.15s ease-in-out;
+  transition: 0.15s ease-out;
 }
 @media (hover: hover) {
   header .header-flex .navbar a:hover {
@@ -196,8 +196,9 @@ header .header-flex .navbar a {
 }
 header .header-flex .navbar.active {
   box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
+  visibility: visible;
 }
 header .header-flex .icons-nav {
   font-size: 2.6rem;
@@ -231,19 +232,20 @@ header .header-flex .icons-nav #toggle-nav-btn {
 }
 
 .searchbar {
-  overflow: visible;
+  visibility: hidden;
   position: absolute;
   padding: 1rem;
+  width: 30rem;
   top: 10rem;
   right: 0;
   background-color: #FFFFFF;
   border: 0.3rem solid #252525;
   border-radius: 0.8rem;
-  z-index: -100;
+  z-index: -1000000;
   text-align: center;
-  transform: translateX(125%);
+  transform: translateY(100%);
   opacity: 0;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-out;
 }
 .searchbar input {
   font-family: "Red Hat Text", sans-serif;
@@ -266,6 +268,7 @@ header .header-flex .icons-nav #toggle-nav-btn {
   box-shadow: 0.2rem 0.1rem 0.8rem #85858528;
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 900px) {
@@ -273,16 +276,17 @@ header .header-flex .icons-nav #toggle-nav-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
+    left: 0;
     right: 0;
-    gap: 2rem;
+    gap: 0rem;
     padding: 2rem;
     top: 10rem;
     background-color: #FFFFFF;
     border: 0.3rem solid #252525;
     border-radius: 0.8rem;
-    transform: translateX(150%);
+    transform: translateY(100%);
     opacity: 0;
   }
   header .header-flex .icons-nav #toggle-nav-btn {
@@ -291,7 +295,7 @@ header .header-flex .icons-nav #toggle-nav-btn {
 }
 @media (max-width: 600px) {
   header .header-flex .searchbar {
-    width: inherit;
+    width: 100%;
     left: 0;
   }
 }

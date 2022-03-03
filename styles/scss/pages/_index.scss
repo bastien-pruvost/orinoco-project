@@ -41,7 +41,6 @@
       background: $white;
       border: 0.1rem solid $shadowColor;
       box-shadow: 0.1rem 0.2rem 2rem $shadowColor;
-      // max-width: 25rem;
       margin: 0 auto;
 
       &__img {
@@ -81,20 +80,6 @@
     &__desc {
       h2 {
         font-size: 3.5rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .products {
-    .gallery {
-      .product-card {
-        &__details {
-          h3 {
-            min-height: 60px;
-          }
-        }
       }
     }
   }
