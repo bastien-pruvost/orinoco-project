@@ -37,7 +37,6 @@ header {
       font-weight: 800;
       transition:  0.3s ease-out;
       margin: 0 auto;
-      visibility: hidden;
 
       a {
         padding: 0 2rem;
@@ -164,6 +163,7 @@ header {
         border: 0.3rem solid $black;
         border-radius: 0.8rem;
         transform: translateY(+100%);
+        visibility: hidden;
         opacity: 0;
       }
 

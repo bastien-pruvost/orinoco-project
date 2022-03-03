@@ -188,7 +188,6 @@ header .header-flex .navbar {
   font-weight: 800;
   transition: 0.3s ease-out;
   margin: 0 auto;
-  visibility: hidden;
 }
 header .header-flex .navbar a {
   padding: 0 2rem;
@@ -292,6 +291,7 @@ header .header-flex .icons-nav #toggle-nav-btn {
     border: 0.3rem solid #252525;
     border-radius: 0.8rem;
     transform: translateY(100%);
+    visibility: hidden;
     opacity: 0;
   }
   header .header-flex .icons-nav #toggle-nav-btn {
@@ -318,10 +318,10 @@ footer .footer-flex {
 footer .footer-flex i {
   font-size: 3rem;
   padding: 0 1rem;
-  transition: 0.15s ease-out;
+  transition: 0.1s ease-out;
 }
 @media (hover: hover) {
-  footer .footer-flex i i:hover {
+  footer .footer-flex i:hover {
     transform: scale(1.1);
     color: #ffc100;
   }

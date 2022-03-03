@@ -10,12 +10,12 @@ footer {
     i {
       font-size: 3rem;
       padding: 0 1rem;
-      transition: 0.15s ease-out;
-      @media (hover: hover) {
-        i:hover {
-          transform: scale(1.1);
-          color: $primary;
-        }
+      transition: 0.1s ease-out;
+    }
+    @media (hover: hover) {
+      i:hover {
+        transform: scale(1.1);
+        color: $primary;
       }
     }
 
