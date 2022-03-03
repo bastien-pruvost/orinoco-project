@@ -103,9 +103,12 @@
             color: $greyMedium;
             opacity: 0.2;
             cursor: pointer;
-            &:hover {
-              opacity: 0.9;
+            @media (hover: hover) {
+              i:hover {
+                opacity: 0.9;
+              }
             }
+
           }
         }
 

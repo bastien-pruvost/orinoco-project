@@ -11,13 +11,18 @@ footer {
       font-size: 3rem;
       padding: 0 1rem;
       transition: 0.15s ease-out;
-      &:hover {
-        transform: scale(1.1);
-        color: $primary;
+      @media (hover: hover) {
+        i:hover {
+          transform: scale(1.1);
+          color: $primary;
+        }
       }
     }
-    a:hover {
-      text-decoration: underline;
+
+    @media (hover: hover) {
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 

@@ -315,12 +315,16 @@ footer .footer-flex i {
   padding: 0 1rem;
   transition: 0.15s ease-out;
 }
-footer .footer-flex i:hover {
-  transform: scale(1.1);
-  color: #ffc100;
+@media (hover: hover) {
+  footer .footer-flex i i:hover {
+    transform: scale(1.1);
+    color: #ffc100;
+  }
 }
-footer .footer-flex a:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  footer .footer-flex a:hover {
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 600px) {
@@ -451,8 +455,10 @@ input:not([type=submit]):focus, select:focus {
   opacity: 0.2;
   cursor: pointer;
 }
-.cart-summary-list .cart-product .quantity-container i:hover {
-  opacity: 0.9;
+@media (hover: hover) {
+  .cart-summary-list .cart-product .quantity-container i i:hover {
+    opacity: 0.9;
+  }
 }
 .cart-summary .total-order-price {
   display: block;
