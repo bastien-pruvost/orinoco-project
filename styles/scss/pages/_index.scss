@@ -32,8 +32,8 @@
   overflow: hidden;
 
   .gallery {
-    @include grid(25rem);
-    gap: 1.7rem;
+    @include grid(23rem);
+    gap: 1.5rem;
     justify-content: center;
 
     .product-card {
@@ -41,6 +41,8 @@
       background: $white;
       border: 0.1rem solid $shadowColor;
       box-shadow: 0.1rem 0.2rem 2rem $shadowColor;
+      // max-width: 25rem;
+      margin: 0 auto;
 
       &__img {
         width: 100%;
@@ -87,8 +89,6 @@
 @media (max-width: 600px) {
   .products {
     .gallery {
-      @include grid(20rem);
-      gap: 1rem;
       .product-card {
         &__details {
           h3 {
