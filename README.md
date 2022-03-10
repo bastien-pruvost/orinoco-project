@@ -1,6 +1,7 @@
 # Orinoco Project
-<a href="https://orinoco.pruvostbastien.fr/" target="_blank"><img src="https://img.shields.io/badge/ctrl_%2B_click_here_to_see_the_website-324050?style=for-the-badge&logo=github&logoColor=white" /></a> (The backend server takes a few seconds to wake up if no one has connected for a long time, wait a few seconds for the products to display)  
-
+<a href="https://orinoco.pruvostbastien.fr/" target="_blank"><img src="https://img.shields.io/badge/ctrl_%2B_click_here_to_see_the_website-324050?style=for-the-badge&logo=github&logoColor=white" /></a>  
+(The backend server takes a few seconds to wake up if no one has connected for a long time, wait a few seconds for the products to display)  
+  
 ## An e-commerce website for cameras  
   
 I realized this project which is an old project of the Openclassrooms Web Developer training.  
