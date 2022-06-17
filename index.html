@@ -1,139 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco | Accueil</title>
 
-  <title>Orinoco | Accueil</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/css/index2.css?v=1.2" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./styles/css/index2.css">
+    <!-- FavIcon -->
+    <link rel="icon" type="image/svg" href="./images/favicon.svg" />
 
-  <!-- FavIcon -->
-  <link rel="icon" type="image/svg" href="./images/favicon.svg" />
+    <!-- FontAwesome Library -->
+    <link
+      rel="stylesheet"
+      media="none"
+      onload="if(media!=='all')media='all'"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- FontAwesome Library -->
-  <link rel="stylesheet" media="none" onload="if(media!=='all')media='all'"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+  <body>
+    <!-- Header -->
 
-<body>
+    <header>
+      <div class="wrapper--header">
+        <div class="header-flex">
+          <a href="./index.html">
+            <h1 class="logo">Orinoco<span>.</span></h1>
+          </a>
 
-  <!-- Header -->
+          <nav class="navbar" id="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./index.html#products">Produits</a>
+            <a href="./cart.html">Panier</a>
+          </nav>
 
-
-  <header>
-    <div class="wrapper--header">
-      <div class="header-flex">
-        <a href="./index.html">
-          <h1 class="logo">Orinoco<span>.</span></h1>
-        </a>
-
-        <nav class="navbar" id="navbar">
-          <a href="./index.html">Accueil</a>
-          <a href="./index.html#products">Produits</a>
-          <a href="./cart.html">Panier</a>
-        </nav>
-
-        <div class="icons-nav">
-          <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-          <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a>
-          <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
-        </div>
-
-        <div class="searchbar" id="searchbar">
-          <form action="#">
-            <input type="text" placeholder="Pas encore disponible"><a href=""><i
-                class="fa-solid fa-magnifying-glass"></i></a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main>
-
-    <!-- Homepage Banner -->
-    <section class="banner" id="banner">
-      <div class="wrapper--large">
-        <div class="banner-flex">
-          <div class="banner__desc">
-            <h2>Trouvez l'appareil photo qu'il vous faut.</h2>
-            <p>
-              Nos <strong>appareils photos</strong> se demarquent par leur <strong>design</strong> unique et leur
-              <strong>qualité</strong>
-              photo incroyable.<br>
-              Si vous cherchez un appareil photo <strong>performant</strong> et à moindre coût, vous êtes au bon
-              endroit.
-            </p>
+          <div class="icons-nav">
+            <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
+            <a
+              href=""
+              class="fa-solid fa-magnifying-glass"
+              id="toggle-search-btn"
+            ></a>
+            <a href="./cart.html" class="fa-solid fa-cart-shopping"
+              ><span id="cart-count">0</span></a
+            >
           </div>
 
-          <img src="./images/banner-blob.avif" alt="Appareil photo vintage" class="banner__img">
+          <div class="searchbar" id="searchbar">
+            <form action="#">
+              <input type="text" placeholder="Pas encore disponible" /><a
+                href=""
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- Products Section -->
+    <!-- Main -->
+    <main>
+      <!-- Homepage Banner -->
+      <section class="banner" id="banner">
+        <div class="wrapper--large">
+          <div class="banner-flex">
+            <div class="banner__desc">
+              <h2>Trouvez l'appareil photo qu'il vous faut.</h2>
+              <p>
+                Nos <strong>appareils photos</strong> se demarquent par leur
+                <strong>design</strong> unique et leur
+                <strong>qualité</strong>
+                photo incroyable.<br />
+                Si vous cherchez un appareil photo
+                <strong>performant</strong> et à moindre coût, vous êtes au bon
+                endroit.
+              </p>
+            </div>
 
-    <section class="products" id="products">
-      <div class="wrapper--large">
-        <h2>Nos produits</h2>
+            <img
+              src="./images/banner-blob.avif"
+              alt="Appareil photo vintage"
+              class="banner__img"
+            />
+          </div>
+        </div>
+      </section>
 
-        <!-- Products Grid -->
-        <div class="gallery" id="gallery">
+      <!-- Products Section -->
 
-          <!-- Template of products cards for JS injection -->
-          <template id="product-card-template">
+      <section class="products" id="products">
+        <div class="wrapper--large">
+          <h2>Nos produits</h2>
 
-            <a href="./product.html" class="product-card" id="product-card">
+          <!-- Products Grid -->
+          <div class="gallery" id="gallery">
+            <!-- Template of products cards for JS injection -->
+            <template id="product-card-template">
+              <a href="./product.html" class="product-card" id="product-card">
+                <img
+                  src="./images/vcam.jpg"
+                  alt="Photo d'un "
+                  class="product-card__img"
+                  id="card-img"
+                />
 
-              <img src="./images/vcam.jpg" alt="Photo d'un " class="product-card__img" id="card-img">
+                <div class="product-card__details">
+                  <h3 class="card-name" id="card-name"></h3>
+                  <p class="card-price" id="card-price"></p>
+                  <p href="./product.html" class="card-btn button">
+                    Voir le produit
+                  </p>
+                </div>
+              </a>
+            </template>
+          </div>
+        </div>
+      </section>
+    </main>
 
-              <div class="product-card__details">
-                <h3 class="card-name" id="card-name"></h3>
-                <p class="card-price" id="card-price"></p>
-                <p href="./product.html" class="card-btn button">Voir le produit</p>
-              </div>
+    <!-- Footer -->
 
-            </a>
+    <footer>
+      <div class="wrapper--footer">
+        <div class="footer-flex">
+          <a href="http://openclassrooms.fr/" target="_blank"
+            >Old P5 OpenClassRooms</a
+          >
 
-          </template>
+          <div class="networks">
+            <a href="https://github.com/Dev-BastienPruvost" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://twitter.com/Dev_Bastien" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/bastien-pruvost-dev/"
+              target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
 
+          <a href="https://linktr.ee/Dev_Bastien" target="_blank"
+            >Bastien Pruvost 2022</a
+          >
         </div>
       </div>
-    </section>
+    </footer>
 
-  </main>
-
-  <!-- Footer -->
-
-  <footer>
-    <div class="wrapper--footer">
-      <div class="footer-flex">
-        <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
-
-        <div class="networks">
-          <a href="https://github.com/Dev-BastienPruvost" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://twitter.com/Dev_Bastien" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-
-        <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
-
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript Link -->
-  <script src="./scripts/config.js"></script>
-  <script src="./scripts/cart-counter.js"></script>
-  <script src="./scripts/header.js"></script>
-  <script src="./scripts/index.js"></script>
-
-</body>
-
+    <!-- JavaScript Link -->
+    <script src="./scripts/config.js?v=1.2"></script>
+    <script src="./scripts/cart-counter.js?v=1.2"></script>
+    <script src="./scripts/header.js?v=1.2"></script>
+    <script src="./scripts/index.js?v=1.2"></script>
+  </body>
 </html>
