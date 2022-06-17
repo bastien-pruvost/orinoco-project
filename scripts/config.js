@@ -4,7 +4,7 @@ let apiUrl;
 if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
   apiUrl = 'http://localhost:3000';
 } else {
-  apiUrl = 'https://training-orinoco-backend.pruvostbastien.fr';
+  apiUrl = 'http://training-orinoco-backend.pruvostbastien.fr';
 }
 
 console.log(apiUrl);
