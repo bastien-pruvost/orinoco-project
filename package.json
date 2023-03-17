@@ -1,15 +1,21 @@
 {
-  "name": "orinoco-frontend",
+  "name": "orinoco-project",
   "version": "1.0.0",
-  "description": "frontend of orinoco project",
-  "main": "index.js",
+  "private": true,
+  "description": "Old project of Openclassrooms Web Developer Bootcamp.",
+  "keywords": [],
+  "homepage": "https://github.com/bastien-pruvost/orinoco-project#readme",
+  "license": "MIT",
+  "author": {
+    "name": "Bastien Pruvost",
+    "url": "https://github.com/bastien-pruvost"
+  },
+  "main": "index.html",
+  "browserslist": "defaults",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch ./styles/scss/:./styles/unprefixed-css/ --style expanded --no-source-map",
     "prefix": "postcss ./styles/unprefixed-css/ --use autoprefixer -d ./styles/css/ --no-map ",
     "autoprefix": "onchange \"./styles/unprefixed-css/*.css\" -- npm run prefix"
-  },
-  "author": "",
-  "license": "ISC",
-  "browserslist": "defaults"
+  }
 }

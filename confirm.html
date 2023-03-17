@@ -1,100 +1,104 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco | Confirmation</title>
 
-  <title>Orinoco | Confirmation</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/css/confirm.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./styles/css/confirm.css">
+    <!-- FavIcon -->
+    <link rel="icon" type="image/svg" href="./images/favicon.svg" />
 
-  <!-- FavIcon -->
-  <link rel="icon" type="image/svg" href="./images/favicon.svg" />
+    <!-- FontAwesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- FontAwesome Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="wrapper--header">
+        <div class="header-flex">
+          <a href="./index.html">
+            <h1 class="logo">Orinoco<span>.</span></h1>
+          </a>
 
-<body>
+          <nav class="navbar" id="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./index.html#products">Produits</a>
+            <a href="./cart.html">Panier</a>
+          </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="wrapper--header">
-      <div class="header-flex">
-        <a href="./index.html">
-          <h1 class="logo">Orinoco<span>.</span></h1>
-        </a>
+          <div class="icons-nav">
+            <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
+            <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
+            <a href="./cart.html" class="fa-solid fa-cart-shopping"
+              ><span id="cart-count">0</span></a
+            >
+          </div>
 
-        <nav class="navbar" id="navbar">
-          <a href="./index.html">Accueil</a>
-          <a href="./index.html#products">Produits</a>
-          <a href="./cart.html">Panier</a>
-        </nav>
-
-        <div class="icons-nav">
-          <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-          <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
-          <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
-        </div>
-
-        <div class="searchbar" id="searchbar">
-          <form action="#">
-            <input type="text" placeholder="Pas encore disponible"><a href=""><i
-                class="fa-solid fa-magnifying-glass"></i></a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main>
-
-    <section class="confirm-section">
-      <div class="wrapper--medium">
-        <div class="confirm">
-          <h3>Confirmation de votre commande</h3>
-          <p>Votre commande a bien été validé</p>
-          <p>Montant total de votre commande : <span id="order-price"></span></p>
-          <p>Voici votre numéro de commande : <span id="order-id"></span></p>
-
-          <p>Nous vous remercions pour votre confiance</p>
-          <a href="./index.html">Retourner a l'accueil</a>
+          <div class="searchbar" id="searchbar">
+            <form action="#">
+              <input type="text" placeholder="Pas encore disponible" /><a href=""
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
+    </header>
 
-  </main>
+    <!-- Main -->
+    <main>
+      <section class="confirm-section">
+        <div class="wrapper--medium">
+          <div class="confirm">
+            <h3>Confirmation de votre commande</h3>
+            <p>Votre commande a bien été validé</p>
+            <p>Montant total de votre commande : <span id="order-price"></span></p>
+            <p>Voici votre numéro de commande : <span id="order-id"></span></p>
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrapper--footer">
-      <div class="footer-flex">
-        <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
-
-        <div class="networks">
-          <a href="https://github.com/Dev-BastienPruvost" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://twitter.com/Dev_Bastien" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"><i
-              class="fa-brands fa-linkedin-in"></i></a>
+            <p>Nous vous remercions pour votre confiance</p>
+            <a href="./index.html">Retourner a l'accueil</a>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper--footer">
+        <div class="footer-flex">
+          <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
 
+          <div class="networks">
+            <a href="https://github.com/Dev-BastienPruvost" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://twitter.com/Dev_Bastien" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+
+          <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-
-  <!-- JavaScript Link -->
-  <script src="./scripts/config.js"></script>
-  <script src="./scripts/cart-counter.js"></script>
-  <script src="./scripts/header.js"></script>
-  <script src="./scripts/confirm.js"></script>
-
-</body>
-
+    <!-- JavaScript Link -->
+    <script src="./scripts/config.js"></script>
+    <script src="./scripts/cart-counter.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/confirm.js"></script>
+  </body>
 </html>

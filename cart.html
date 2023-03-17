@@ -1,190 +1,216 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco | Panier</title>
 
-  <title>Orinoco | Panier</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/css/cart.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./styles/css/cart.css">
+    <!-- FavIcon -->
+    <link rel="icon" type="image/svg" href="./images/favicon.svg" />
 
-  <!-- FavIcon -->
-  <link rel="icon" type="image/svg" href="./images/favicon.svg" />
+    <!-- FontAwesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- FontAwesome Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="wrapper--header">
+        <div class="header-flex">
+          <a href="./index.html">
+            <h1 class="logo">Orinoco<span>.</span></h1>
+          </a>
 
-<body>
+          <nav class="navbar" id="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./index.html#products">Produits</a>
+            <a href="./cart.html">Panier</a>
+          </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="wrapper--header">
-      <div class="header-flex">
-        <a href="./index.html">
-          <h1 class="logo">Orinoco<span>.</span></h1>
-        </a>
+          <div class="icons-nav">
+            <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
+            <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
+            <a href="./cart.html" class="fa-solid fa-cart-shopping"
+              ><span id="cart-count">0</span></a
+            >
+          </div>
 
-        <nav class="navbar" id="navbar">
-          <a href="./index.html">Accueil</a>
-          <a href="./index.html#products">Produits</a>
-          <a href="./cart.html">Panier</a>
-        </nav>
-
-        <div class="icons-nav">
-          <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-          <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
-          <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
-        </div>
-
-        <div class="searchbar" id="searchbar">
-          <form action="#">
-            <input type="text" placeholder="Pas encore disponible"><a href=""><i
-                class="fa-solid fa-magnifying-glass"></i></a>
-          </form>
+          <div class="searchbar" id="searchbar">
+            <form action="#">
+              <input type="text" placeholder="Pas encore disponible" /><a href=""
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main -->
-  <main>
+    <!-- Main -->
+    <main>
+      <section class="cart-section">
+        <div class="wrapper--large">
+          <div class="cart">
+            <div class="cart-summary">
+              <div class="cart-summary-heading">
+                <h3>Votre panier</h3>
+                <span id="products-count">Le panier est vide</span>
+              </div>
 
-    <section class="cart-section">
-      <div class="wrapper--large">
-        <div class="cart">
-          <div class="cart-summary">
-            <div class="cart-summary-heading">
-              <h3>Votre panier</h3><span id="products-count">Le panier est vide</span>
-            </div>
+              <div class="cart-summary-titles">
+                <span class="column-title">Produit</span>
+                <span class="column-title">Prix</span>
+                <span class="column-title">Quantité</span>
+                <span class="column-title">Prix total</span>
+              </div>
 
-            <div class="cart-summary-titles">
-              <span class="column-title">Produit</span>
-              <span class="column-title">Prix</span>
-              <span class="column-title">Quantité</span>
-              <span class="column-title">Prix total</span>
-            </div>
-
-            <ul class="cart-summary-list" id="cart-summary-list">
-
-              <template id="cart-product-template">
-                <li class="cart-product" id="cart-product">
-                  <a href="#" class="img-name-lense" id="img-name-lense">
-                    <img src="./images/vcam.jpg" alt="" class="cart-product-img" id="cart-product-img">
-                    <div>
-                      <span class="cart-product-name" id="cart-product-name"></span>
-                      <span class="cart-product-lense" id="cart-product-lense"></span>
+              <ul class="cart-summary-list" id="cart-summary-list">
+                <template id="cart-product-template">
+                  <li class="cart-product" id="cart-product">
+                    <a href="#" class="img-name-lense" id="img-name-lense">
+                      <img
+                        src="./images/vcam.jpg"
+                        alt=""
+                        class="cart-product-img"
+                        id="cart-product-img"
+                      />
+                      <div>
+                        <span class="cart-product-name" id="cart-product-name"></span>
+                        <span class="cart-product-lense" id="cart-product-lense"></span>
+                      </div>
+                    </a>
+                    <span class="cart-product-price" id="cart-product-price">0 €</span>
+                    <div class="quantity-container">
+                      <input
+                        class="cart-product-quantity"
+                        id="cart-product-quantity"
+                        type="number"
+                        min="1"
+                        max="999"
+                        value=""
+                        autocomplete="off"
+                      />
+                      <i class="fa-solid fa-trash-can" id="delete-button"></i>
                     </div>
-                  </a>
-                  <span class="cart-product-price" id="cart-product-price">0 €</span>
-                  <div class="quantity-container">
+                    <span class="cart-product-total-price" id="cart-product-total-price"></span>
+                  </li>
+                </template>
+              </ul>
 
-                    <input class="cart-product-quantity" id="cart-product-quantity" type="number" min="1" max="999"
-                      value="" autocomplete="off">
-                    <i class="fa-solid fa-trash-can" id="delete-button"></i>
+              <p class="total-order-price">
+                Total de la commande : <br /><span id="inject-total-order-price">0 €</span>
+              </p>
+            </div>
+
+            <div class="cart-order">
+              <div class="sticky-container">
+                <h3>Finaliser la commande</h3>
+                <form action="#" class="form" id="form">
+                  <div class="input-container" id="firstname-container">
+                    <label for="firstname">Prénom :</label>
+                    <input
+                      type="text"
+                      autocomplete="off"
+                      id="firstname"
+                      placeholder=""
+                      maxlength="38"
+                    />
+                    <span class="alert"></span>
                   </div>
-                  <span class="cart-product-total-price" id="cart-product-total-price"></span>
-                </li>
-              </template>
 
-            </ul>
+                  <div class="input-container" id="lastname-container">
+                    <label for="lastname">Nom :</label>
+                    <input
+                      type="text"
+                      autocomplete="off"
+                      id="lastname"
+                      placeholder=""
+                      maxlength="38"
+                    />
+                    <span class="alert"></span>
+                  </div>
 
-            <p class="total-order-price">Total de la commande : <br><span id="inject-total-order-price">0 €</span></p>
+                  <div class="input-container" id="email-container">
+                    <label for="email">Email :</label>
+                    <input type="text" autocomplete="off" id="email" placeholder="" />
+                    <span class="alert"></span>
+                  </div>
 
-          </div>
+                  <div class="input-container" id="address-container">
+                    <label for="address">Adresse :</label>
+                    <input type="text" autocomplete="off" id="address" placeholder="" />
+                    <span class="alert"></span>
+                  </div>
 
-          <div class="cart-order">
-            <div class="sticky-container">
-              <h3>Finaliser la commande</h3>
-              <form action="#" class="form" id="form">
+                  <div class="input-container" id="zip-container">
+                    <label for="zip">Code postal :</label>
+                    <input type="text" autocomplete="off" id="zip" placeholder="" maxlength="5" />
+                    <span class="alert"></span>
+                  </div>
 
-                <div class="input-container" id="firstname-container">
-                  <label for="firstname">Prénom :</label>
-                  <input type="text" autocomplete="off" id="firstname" placeholder="" maxlength="38">
-                  <span class="alert"></span>
-                </div>
+                  <div class="input-container" id="city-container">
+                    <label for="city">Ville :</label>
+                    <input type="text" autocomplete="off" id="city" placeholder="" />
+                    <span class="alert"></span>
+                  </div>
 
-                <div class="input-container" id="lastname-container">
-                  <label for="lastname">Nom :</label>
-                  <input type="text" autocomplete="off" id="lastname" placeholder="" maxlength="38">
-                  <span class="alert"></span>
-                </div>
+                  <div class="policy-container" id="policy-container">
+                    <input type="checkbox" id="policy-check" />
+                    <label for="policy-check" class="policy-text"
+                      >En cochant cette case, j'accepte les
+                      <a href="#">conditions générales de ventes</a></label
+                    >
+                    <span class="alert">Test</span>
+                  </div>
 
-                <div class="input-container" id="email-container">
-                  <label for="email">Email :</label>
-                  <input type="text" autocomplete="off" id="email" placeholder="">
-                  <span class="alert"></span>
-                </div>
-
-                <div class="input-container" id="address-container">
-                  <label for="address">Adresse :</label>
-                  <input type="text" autocomplete="off" id="address" placeholder="">
-                  <span class="alert"></span>
-                </div>
-
-                <div class="input-container" id="zip-container">
-                  <label for="zip">Code postal :</label>
-                  <input type="text" autocomplete="off" id="zip" placeholder="" maxlength="5">
-                  <span class="alert"></span>
-                </div>
-
-                <div class="input-container" id="city-container">
-                  <label for="city">Ville :</label>
-                  <input type="text" autocomplete="off" id="city" placeholder="">
-                  <span class="alert"></span>
-                </div>
-
-                <div class="policy-container" id="policy-container">
-                  <input type="checkbox" id="policy-check">
-                  <label for="policy-check" class="policy-text">En cochant cette case, j'accepte les <a
-                      href="#">conditions générales de ventes</a></label>
-                  <span class="alert">Test</span>
-                </div>
-
-                <div class="submit-container" id="submit-container">
-                  <input type="submit" value="Valider ma commande" class="button">
-                  <span class="alert"></span>
-                </div>
-              </form>
+                  <div class="submit-container" id="submit-container">
+                    <input type="submit" value="Valider ma commande" class="button" />
+                    <span class="alert"></span>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+    </main>
 
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper--footer">
+        <div class="footer-flex">
+          <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
+
+          <div class="networks">
+            <a href="https://github.com/Dev-BastienPruvost" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://twitter.com/Dev_Bastien" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+          </div>
+
+          <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
         </div>
       </div>
+    </footer>
 
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrapper--footer">
-      <div class="footer-flex">
-        <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
-
-        <div class="networks">
-          <a href="https://github.com/Dev-BastienPruvost" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://twitter.com/Dev_Bastien" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-
-        <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
-
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- JavaScript Link -->
-  <script src="./scripts/config.js"></script>
-  <script src="./scripts/cart-counter.js"></script>
-  <script src="./scripts/header.js"></script>
-  <script src="./scripts/cart.js"></script>
-
-</body>
-
+    <!-- JavaScript Link -->
+    <script src="./scripts/config.js"></script>
+    <script src="./scripts/cart-counter.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/cart.js"></script>
+  </body>
 </html>

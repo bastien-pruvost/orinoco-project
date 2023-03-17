@@ -1,23 +1,138 @@
-# Orinoco Project
-<a href="https://orinoco.pruvostbastien.fr/" target="_blank"><img src="https://img.shields.io/badge/ctrl_%2B_click_here_to_see_the_website-324050?style=for-the-badge&logo=github&logoColor=white" /></a>  
-(The backend server takes a few seconds to wake up if no one has connected for a long time, wait a few seconds for the products to display)  
-  
-## An e-commerce website for cameras  
-  
-I realized this project which is an old project of the Openclassrooms Web Developer training.  
-The goal here was to use an API present on the backend to dynamically display the products, to create a single product page which then displays the product that has been selected.  
-You can add items to the basket by selecting an option on the product (lenses) as well as a quantity.  
-It was also necessary to create a cart page with a list of the items present in the cart and a form to place an order.  
-The form verifies the validity of the informations provided.  
-Finally, there is a confirmation page that returns an order number provided by the backend in response to the form submission as well as the total amount of the order.  
-  
----
-  
-## Un site e-commerce de vente de caméra  
-  
-J'ai réalisé ce projet qui est un ancien projet de la formation Developpeur Web.  
-Le but ici etait de faire appel à une api présente sur le backend pour afficher dynamiquement les produits, de créer une page produit unique qui affiche ensuite le produit que l'on a séléctionné.  
-On peut ajouter des articles au panier en selectionnant une option sur le produit (lentilles) ainsi qu'une quantité.  
-Il fallait egalement créer une page panier avec une liste des articles présents dans le panier et un formulaire pour passer sa commande.  
-Le formumlaire verifie la validité des informations fournis.  
-Pour finir il y a une page confirmation qui retourne un numéro de commande fourni par le backend en reponse de l'envoie du formulaire ainsi que le montant total de la commande.  
+<!-- prettier-ignore-start -->
+
+<!-- Rename all occurences with Cmd + D :
+
+Orinoco - Old Bootcamp Project
+orinoco-project
+orinoco.pruvostbastien.fr
+https://orinoco.pruvostbastien.fr
+
+ -->
+
+
+# Orinoco - Old Bootcamp Project
+
+This project is an old project of Openclassrooms Web Developer Bootcamp.
+
+[orinoco.pruvostbastien.fr](https://orinoco.pruvostbastien.fr)
+
+> **Warning**  
+> You will get a "Failed to fetch" alert when you arrive on the page.  
+> Following the discontinuation of heroku's free services, the API and back-end is currently inaccessible.  
+> I need to host the API at another hosting provider, but I don't have enough time to do so at the moment.  
+
+## About the project
+
+The goal of this project was to code all the front-end of an e-commerce website.
+
+We had to connect to an existing API, retrieve data and display it in the front-end.
+
+
+## Features
+
+- See the list of all products
+- Add product to cart
+- Delete product from cart
+- Change quantity of a product in cart
+- Form validation before confirming the order
+- Confirmation page with a unique code provided by the API
+
+
+## Tech Stack
+
+- HTML
+- Sass / Scss
+- Javascript
+
+
+## Run locally
+
+1. Clone the project:
+
+```bash
+  git clone https://github.com/bastien-pruvost/orinoco-project.git
+```
+
+2. Go to the project directory:
+
+```bash
+  cd orinoco-project
+```
+
+3. Go to the `back-end` folder:
+
+```bash
+  cd back-end
+```
+
+3. Install dependencies:
+
+```bash
+  pnpm install
+  # or
+  yarn install
+  # or
+  npm install
+```
+
+4. Start Node.js server:
+
+```bash
+  pnpm start
+  # or
+  yarn start
+  # or
+  npm start
+```
+
+- The server should run on `localhost` with default port `3000`.
+
+- If the server runs on another port for any reason, this is printed to the
+console when the server starts, e.g. `Listening on port 3001`.
+
+5. Go to the `root` folder:
+   
+```bash
+  cd ../
+```
+
+6. Run `index.html` file in your browser
+
+
+## Suggestions
+
+If you have any suggestion, feel free to [create an issue](https://github.com/bastien-pruvost/orinoco-project/issues) with the tag "enhancement"
+
+
+## Report bug / Support
+
+To report a bug or get help [create an issue](https://github.com/bastien-pruvost/orinoco-project/issues).
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request.
+
+1. [Fork the project](https://github.com/bastien-pruvost/orinoco-project/fork)
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Code your feature
+4. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+5. Push to the branch (`git push origin feature/my-feature`)
+6. [Open a pull request](https://github.com/bastien-pruvost/orinoco-project/compare)
+
+You can also simply open an issue with the tag "enhancement".
+
+Don't forget to give the project a star! Thanks again!
+
+
+## License
+
+Distributed under the [MIT License](https://choosealicense.com/licenses/mit/).
+
+See `LICENSE` file for more information.
+
+
+
+<!-- prettier-ignore-end -->

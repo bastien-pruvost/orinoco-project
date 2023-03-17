@@ -1,145 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orinoco | Accueil</title>
 
-  <title>Orinoco | Accueil</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/css/product2.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./styles/css/product2.css">
+    <!-- FavIcon -->
+    <link rel="icon" type="image/svg" href="./images/favicon.svg" />
 
-  <!-- FavIcon -->
-  <link rel="icon" type="image/svg" href="./images/favicon.svg" />
+    <!-- FontAwesome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-  <!-- FontAwesome Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="wrapper--header">
+        <div class="header-flex">
+          <a href="./index.html">
+            <h1 class="logo">Orinoco<span>.</span></h1>
+          </a>
 
-<body>
+          <nav class="navbar" id="navbar">
+            <a href="./index.html">Accueil</a>
+            <a href="./index.html#products">Produits</a>
+            <a href="./cart.html">Panier</a>
+          </nav>
 
-  <!-- Header -->
-  <header>
-    <div class="wrapper--header">
-      <div class="header-flex">
-        <a href="./index.html">
-          <h1 class="logo">Orinoco<span>.</span></h1>
-        </a>
+          <div class="icons-nav">
+            <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
+            <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
+            <a href="./cart.html" class="fa-solid fa-cart-shopping"
+              ><span id="cart-count">0</span></a
+            >
+          </div>
 
-        <nav class="navbar" id="navbar">
-          <a href="./index.html">Accueil</a>
-          <a href="./index.html#products">Produits</a>
-          <a href="./cart.html">Panier</a>
-        </nav>
-
-        <div class="icons-nav">
-          <a href="" class="fa-solid fa-bars" id="toggle-nav-btn"></a>
-          <!-- <a href="" class="fa-solid fa-magnifying-glass" id="toggle-search-btn"></a> -->
-          <a href="./cart.html" class="fa-solid fa-cart-shopping"><span id="cart-count">0</span></a>
-        </div>
-
-        <div class="searchbar" id="searchbar">
-          <form action="#">
-            <input type="text" placeholder="Pas encore disponible"><a href=""><i
-                class="fa-solid fa-magnifying-glass"></i></a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main -->
-  <main>
-    <section class="product-section">
-      <div class="wrapper--medium">
-        <div class="product">
-
-          <img src="#" alt="Photo du produit" class="product__img" id="product-img">
-
-          <div class="product__details">
-
-            <h3 class="product__name" id="product-name">.</h3>
-
-            <p class="product__desc" id="product-desc">.</p>
-
-
-            <form action="" class="buy-options" onkeypress="return event.keyCode != 13">
-
-              <div class="product__quantity">
-                <label for="quantity-select">Quantité :</label>
-                <input type="number" id="quantity-select" value="1" min="1" max="99">
-
-              </div>
-
-              <div class="product__lense-choice">
-                <label for="lense-select">Choisissez une lentille :</label>
-                <select name="lense-select" id="lense-select" class="lense-select">
-                  <template id="lense-template">
-                    <option value="" id="lense-option">Lentille</option>
-                  </template>
-                </select>
-              </div>
-
+          <div class="searchbar" id="searchbar">
+            <form action="#">
+              <input type="text" placeholder="Pas encore disponible" /><a href=""
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
             </form>
-
-            <!-- <div class="price-buy"> -->
-            <span class="product__price" id="product-price">3900 €</span>
-            <a href="" class="button" id="add-to-cart">Ajouter au panier</a>
-            <!-- </div> -->
-
           </div>
         </div>
       </div>
+    </header>
 
-      <div class="cart-box">
-        <div class="cart-popup" id="cart-popup">
-          <div class="cart-popup__product-text">
-            <p class="cart-popup__title">Votre article a bien été ajouté au panier :</p>
-            <p id="popup-inject-name-lense"></p>
-            <p id="popup-inject-quantity"></p>
+    <!-- Main -->
+    <main>
+      <section class="product-section">
+        <div class="wrapper--medium">
+          <div class="product">
+            <img src="#" alt="Photo du produit" class="product__img" id="product-img" />
+
+            <div class="product__details">
+              <h3 class="product__name" id="product-name">.</h3>
+
+              <p class="product__desc" id="product-desc">.</p>
+
+              <form action="" class="buy-options" onkeypress="return event.keyCode != 13">
+                <div class="product__quantity">
+                  <label for="quantity-select">Quantité :</label>
+                  <input type="number" id="quantity-select" value="1" min="1" max="99" />
+                </div>
+
+                <div class="product__lense-choice">
+                  <label for="lense-select">Choisissez une lentille :</label>
+                  <select name="lense-select" id="lense-select" class="lense-select">
+                    <template id="lense-template">
+                      <option value="" id="lense-option">Lentille</option>
+                    </template>
+                  </select>
+                </div>
+              </form>
+
+              <!-- <div class="price-buy"> -->
+              <span class="product__price" id="product-price">3900 €</span>
+              <a href="" class="button" id="add-to-cart">Ajouter au panier</a>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="cart-box">
+          <div class="cart-popup" id="cart-popup">
+            <div class="cart-popup__product-text">
+              <p class="cart-popup__title">Votre article a bien été ajouté au panier :</p>
+              <p id="popup-inject-name-lense"></p>
+              <p id="popup-inject-quantity"></p>
+            </div>
+
+            <span>Voulez-vous continuer vos achats ?</span>
+            <a href="" class="button" id="continue-shopping-btn">Continuer mes achats</a>
+            <a href="./cart.html" class="button">Aller au panier</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="wrapper--footer">
+        <div class="footer-flex">
+          <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
+
+          <div class="networks">
+            <a href="https://github.com/Dev-BastienPruvost" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://twitter.com/Dev_Bastien" target="_blank"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
           </div>
 
-          <span>Voulez-vous continuer vos achats ?</span>
-          <a href="" class="button" id="continue-shopping-btn">Continuer mes achats</a>
-          <a href="./cart.html" class="button">Aller au panier</a>
+          <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
         </div>
       </div>
+    </footer>
 
-    </section>
-
-  </main>
-
-
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="wrapper--footer">
-      <div class="footer-flex">
-        <a href="http://openclassrooms.fr/" target="_blank">Old P5 OpenClassRooms</a>
-
-        <div class="networks">
-          <a href="https://github.com/Dev-BastienPruvost" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://twitter.com/Dev_Bastien" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/bastien-pruvost-dev/" target="_blank"><i
-              class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-
-        <a href="https://linktr.ee/Dev_Bastien" target="_blank">Bastien Pruvost 2022</a>
-
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- JavaScript Link -->
-  <script src="./scripts/config.js"></script>
-  <script src="./scripts/cart-counter.js"></script>
-  <script src="./scripts/header.js"></script>
-  <script src="./scripts/product.js"></script>
-
-</body>
-
+    <!-- JavaScript Link -->
+    <script src="./scripts/config.js"></script>
+    <script src="./scripts/cart-counter.js"></script>
+    <script src="./scripts/header.js"></script>
+    <script src="./scripts/product.js"></script>
+  </body>
 </html>
